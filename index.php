@@ -19,7 +19,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <meta name="generator" content="Mobirise v5.0.2, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
-    <meta name="description" content="New SolutionM4 Theme HTML Template - Download Now!">
+    <meta name="description" content="FransXeagle YouTube Free Informative Tutorial">
 
     <!-- Favicon -->
     <link href="img/about.png" rel="icon">
