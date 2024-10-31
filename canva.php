@@ -95,10 +95,10 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                                 MASUK
                                 TEAM PREMIUM) dengan begitu bisa akses semua fitur seperti unlock all templates,
                                 effects, dan lainnya. Thank You For Your Support !!</p>
-                            <a href="https://sub4unlock.io/3rfaY" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Click
+                            <a href="https://sub4unlock.io/KGAzd" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Click
                                 This For Join</a>
-                            <a href="https://sub4unlock.io/3rfaY" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">SPECIAL TEAM 47
-                                [16]</a>
+                            <a href="https://sub4unlock.io/KGAzd" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">SPECIAL TEAM 47
+                                [17]</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
