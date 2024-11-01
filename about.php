@@ -280,10 +280,6 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <script src="assets/formoid/formoid.min.js"></script>
 
     <script>
-        if (window.location.hostname !== "fransxeagle.com" && window.location.hostname !== "localhost") {
-            document.body.innerHTML = "<h1>Akses Ditolak</h1>";
-        }
-
         const playlist = [
             "music/1.mp3",
             "music/2.mp3",

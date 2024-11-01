@@ -323,10 +323,6 @@ $title = "FransXeagle YouTube";
     <script src="js/main.js"></script>
 
     <script>
-        if (window.location.hostname !== "fransxeagle.com" && window.location.hostname !== "localhost") {
-            document.body.innerHTML = "<h1>Akses Ditolak</h1>";
-        }
-
         console.log = function() {};
 
         setInterval(function() {
