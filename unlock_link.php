@@ -251,7 +251,7 @@
         // URLs yang dienkripsi
         const socialUrls = {
             subscribe: encrypt('https://www.youtube.com/@fransxeagle'),
-            like: encrypt('https://www.youtube.com/watch?v=XAk0iFxrR4E&t=15s'),
+            like: encrypt('https://youtu.be/Y25eThOLV1E'),
             instagram: encrypt('https://www.instagram.com/fransxdarmawan/')
         };
 
