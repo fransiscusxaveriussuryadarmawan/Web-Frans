@@ -80,7 +80,7 @@ $title = "FransXeagle YouTube";
             <div class="container-xxl bg-primary hero-header">
 
                 <div class="text-center text-white">
-                    <h1 class="mb-4 fw-bold" style="color: #FFD700;">Join Instan Canva Pro</h1>
+                    <h1 class="mb-4 fw-bold" style="color: #FFD700;">Join Instan Canva Pro 1 Detik</h1>
                     <p class="mb-4 fs-5">Nikmati akses eksklusif Canva Pro dengan langkah mudah berikut:</p>
                 </div>
 
@@ -100,16 +100,24 @@ $title = "FransXeagle YouTube";
                             </ol>
 
                             <div class="text-center my-4">
-                                <!-- Gambar QRIS -->
-                                <img src="img/qris.jpg" alt="QRIS Payment" class="img-fluid rounded" style="width: 250px; height: auto; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
+                                <a href="img/qris.jpg" data-lightbox="qris">
+                                    <img src="img/qris.jpg" alt="QRIS Payment" class="img-fluid rounded img-hover-zoom" style="width: 400px; height: auto; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); cursor: pointer;">
+                                </a>
                                 <p class="mt-2 text-muted">*Pastikan nominal pembayaran sesuai.</p>
                             </div>
 
+
+
                             <div class="text-center">
-                                <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text=Halo%2C+saya+ingin+join+instan+Canva+Pro+dan+sudah+membayar+Rp1000" class="btn btn-success btn-lg px-4 py-2">
-                                    <i class="fab fa-whatsapp me-2"></i>Chat WhatsApp & Kirim Bukti Pembayaran
+                                <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text=Halo%2C+saya+ingin+join+instan+Canva+Pro+dan+sudah+membayar+Rp999.%0ASilakan+kirimkan+bukti+pembayaran+jumlah+Rp999%2C+terima+kasih." class="btn btn-success btn-lg px-4 py-2">
+                                    <i class="fab fa-whatsapp me-2"></i>Klik Disini Untuk Chat WhatsApp
                                 </a>
                             </div>
+
+                            <!-- Pesan Penting -->
+                            <p class="bg-warning text-danger fw-bold mt-4 p-3 rounded text-center" style="border: 2px dashed #FF4500;">
+                                *Akses berlaku selama 1 bulan sejak tanggal pembayaran. Jika tim terbanned, Anda akan diberikan tim baru.
+                            </p>
                         </div>
                     </div>
                 </div>

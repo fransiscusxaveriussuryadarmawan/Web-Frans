@@ -80,24 +80,67 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                 </div>
             </nav>
 
-            <div class="container-xxl bg-primary hero-header">
 
+
+
+
+            <div class="container-xxl bg-primary hero-header">
                 <div class="container px-lg-5">
                     <h2 class="text-white mb-4 animated slideInDown">😉</h2>
-                    <div class="row g-5 align-items-end">
+                    <div class="row g-5 align-items-center">
+
+                        <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">Version Canva Pro (30 Days) --- Expired 1 December 2024 Premium<br> ⭐⭐⭐⭐⭐</h1>
-                            <p class="text-white pb-3 animated slideInDown">SPECIAL NOVEMBER 2024 (JADI KLIK OTOMATIS MASUK TEAM PREMIUM) dengan begitu bisa akses semua fitur seperti unlock all templates, effects, dan lainnya. Thank You For Your Support !!</p>
-                            <a href="https://sub4unlock.io/dS4RV" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Click This For Join</a>
-                            <a href="join_instan.php" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Join Instan - Chat WA</a>
+                            <h1 class="text-white mb-4 animated slideInDown">
+                                Version Canva Pro (30 Days) --- Expired 1 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                            </h1>
+                            <p class="text-white pb-3 animated slideInDown">
+                                SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!
+                            </p>
                         </div>
+
+                        <!-- Bagian Gambar Hero -->
                         <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="Gambar Hero">
+                        </div>
+
+                    </div>
+
+                    <!-- Bagian Opsi 1 dan Opsi 2 -->
+                    <div class="row justify-content-center mt-5">
+                        <!-- Opsi 1 -->
+                        <div class="col-lg-5 mb-4">
+                            <div class="card shadow-sm p-4 bg-light border-primary">
+                                <h3 class="text-primary text-center mb-3">Opsi 1: Join via Link Subscribe</h3>
+                                <p class="text-center">(Cocok untuk orang yang sudah paham dan sabar).</p>
+                                <div class="text-center mt-4">
+                                    <a href="https://sub4unlock.io/dS4RV" class="btn btn-primary btn-lg">Click This For Join</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opsi 2 -->
+                        <div class="col-lg-5 mb-4">
+                            <div class="card shadow-sm p-4 bg-light border-secondary">
+                                <h3 class="text-secondary text-center mb-3">Opsi 2: Join via QRIS WA</h3>
+                                <p class="text-center">(Cocok untuk orang yang ingin INSTAN 1 detik).</p>
+                                <div class="text-center mt-4">
+                                    <a href="join_instan.php" class="btn btn-secondary btn-lg">Join via QRIS</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+
+
+
+
+
+
+
+
         </div>
         <!-- Navbar & Hero End -->
 

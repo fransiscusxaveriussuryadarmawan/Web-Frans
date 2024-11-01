@@ -209,6 +209,13 @@ h6,
     }
 }
 
+.img-hover-zoom {
+    transition: transform 0.3s ease; /* Efek transisi yang halus */
+}
+
+.img-hover-zoom:hover {
+    transform: scale(1.05); /* Zoom-in sedikit ketika di-hover */
+}
 
 /*** Hero Header ***/
 .hero-header {
