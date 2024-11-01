@@ -6,6 +6,31 @@
     --dark: #04000B;
 }
 
+.timer {
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    display: none;
+    font-weight: 600;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #8D58BF;
+    width: 0;
+    transition: width 1s linear;
+}
+
+.music-control {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #8D58BF;
+    cursor: pointer;
+}
+
 
 /*** Spinner ***/
 #spinner {

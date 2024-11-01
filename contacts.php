@@ -13,6 +13,14 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 <html>
 
 <head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
     <!-- Site made with Mobirise Website Builder v5.0.2, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +48,76 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="mobirise/style.css">
+
+    <style>
+        /* Music Control Container Styling */
+        .music-control,
+        .volume-control,
+        .music-time {
+            background-color: #333;
+            color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Music Icon Styling */
+        .music-control i#music-icon {
+            font-size: 1.5em;
+            color: #1db954;
+            /* Spotify-like green for play/pause icon */
+            cursor: pointer;
+        }
+
+        /* Progress Bar Styling */
+        #music-progress {
+            width: 100%;
+            height: 8px;
+            background-color: #444;
+            border-radius: 4px;
+            appearance: none;
+        }
+
+        #music-progress::-webkit-progress-bar {
+            background-color: #444;
+            border-radius: 4px;
+        }
+
+        #music-progress::-webkit-progress-value {
+            background-color: #1db954;
+            border-radius: 4px;
+        }
+
+        #music-progress::-moz-progress-bar {
+            background-color: #1db954;
+            border-radius: 4px;
+        }
+
+        /* Volume Control Styling */
+        .volume-control {
+            width: 100%;
+        }
+
+        .volume-control input[type="range"] {
+            width: 100%;
+            accent-color: #1db954;
+        }
+
+        .volume-control i {
+            color: #f9f9f9;
+            font-size: 1.2em;
+        }
+
+        /* Time Display Styling */
+        .music-time span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 1em;
+        }
+    </style>
 
     <!-- Google Tag Manager-->
     <script>
@@ -181,6 +259,25 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+                <!-- Kontrol musik -->
+                <div class="music-control text-center" onclick="toggleMusic()">
+                    <i id="music-icon" class="fas fa-play-circle"></i> Music
+                </div>
+                <audio id="background-music" type="audio/mpeg"></audio>
+                <progress id="music-progress" value="0" max="100" style="width: 100%;"></progress>
+                <div class="music-time">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+
+                <!-- Kontrol Volume -->
+                <div class="volume-control">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+                    <i class="fas fa-volume-up"></i>
                 </div>
             </div>
         </div>
@@ -203,6 +300,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                     </div>
                 </div>
             </div>
+
         </section>
 
 
@@ -265,6 +363,90 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
             document.addEventListener('contextmenu',
                 event => event.preventDefault()
             )
+        </script>
+
+        <script>
+            const playlist = [
+                "music/1.mp3",
+                "music/2.mp3",
+                "music/3.mp3",
+                "music/4.mp3",
+                "music/5.mp3",
+                "music/6.mp3"
+            ];
+
+            const backgroundMusic = document.getElementById("background-music");
+            const musicIcon = document.getElementById("music-icon");
+            const musicProgress = document.getElementById("music-progress");
+            const currentTimeDisplay = document.getElementById("current-time");
+            const durationDisplay = document.getElementById("duration");
+            const volumeControl = document.getElementById("volume-control");
+
+            let currentSongIndex = Math.floor(Math.random() * playlist.length); // Pilih lagu acak untuk awal
+
+            // Atur volume awal
+            backgroundMusic.volume = 0.5;
+
+            function loadSong(index) {
+                backgroundMusic.src = playlist[index];
+                backgroundMusic.load();
+                backgroundMusic.play().catch(error => {
+                    console.log("Auto-play diblokir oleh browser. User perlu mengaktifkannya secara manual.");
+                });
+                updateIcon();
+            }
+
+            function toggleMusic() {
+                if (backgroundMusic.paused) {
+                    backgroundMusic.play();
+                } else {
+                    backgroundMusic.pause();
+                }
+                updateIcon();
+            }
+
+            function updateIcon() {
+                if (backgroundMusic.paused) {
+                    musicIcon.classList.replace("fa-pause-circle", "fa-play-circle");
+                } else {
+                    musicIcon.classList.replace("fa-play-circle", "fa-pause-circle");
+                }
+            }
+
+            backgroundMusic.onloadedmetadata = () => {
+                durationDisplay.textContent = formatTime(backgroundMusic.duration);
+            };
+
+            backgroundMusic.ontimeupdate = () => {
+                const progress = (backgroundMusic.currentTime / backgroundMusic.duration) * 100;
+                musicProgress.value = progress;
+                currentTimeDisplay.textContent = formatTime(backgroundMusic.currentTime);
+            };
+
+            backgroundMusic.onended = () => {
+                currentSongIndex = (currentSongIndex + 1) % playlist.length; // Lanjut ke lagu berikutnya
+                loadSong(currentSongIndex);
+            };
+
+            function formatTime(time) {
+                const minutes = Math.floor(time / 60);
+                const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+                return `${minutes}:${seconds}`;
+            }
+
+            volumeControl.addEventListener("input", () => {
+                backgroundMusic.volume = volumeControl.value;
+            });
+
+            // Muat dan mainkan lagu pertama (acak)
+            loadSong(currentSongIndex);
+
+            // Coba otomatis memutar musik saat halaman dimuat
+            window.onload = function() {
+                backgroundMusic.play().catch(error => {
+                    console.log("Auto-play diblokir oleh browser. User perlu mengaktifkannya secara manual.");
+                });
+            };
         </script>
 </body>
 
