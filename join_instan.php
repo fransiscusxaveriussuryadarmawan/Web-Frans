@@ -13,7 +13,7 @@ $title = "FransXeagle YouTube";
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/about.jpg" rel="icon">
+    <link href="img/about.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

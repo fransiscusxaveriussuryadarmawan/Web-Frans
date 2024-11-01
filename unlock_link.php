@@ -14,6 +14,10 @@
     <!-- CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
+    <!-- Favicon -->
+    <link href="img/about.png" rel="icon">
+
+    <!-- Custom CSS -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -126,6 +130,13 @@
             width: 0;
             transition: width 1s linear;
         }
+
+        .music-control {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #8D58BF;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -168,6 +179,25 @@
             <button id="unlock-btn" class="btn unlock-btn" onclick="unlockLink()">
                 Access Exclusive Content
             </button>
+
+            <!-- Kontrol musik -->
+            <div class="music-control text-center" onclick="toggleMusic()">
+                <i id="music-icon" class="fas fa-play-circle"></i> Music
+            </div>
+            <audio id="background-music" type="audio/mpeg"></audio>
+            <progress id="music-progress" value="0" max="100" style="width: 100%;"></progress>
+            <div class="music-time">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <!-- Kontrol Volume -->
+            <div class="volume-control">
+                <i class="fas fa-volume-down"></i>
+                <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+                <i class="fas fa-volume-up"></i>
+            </div>
+
         </div>
     </div>
 
@@ -199,20 +229,15 @@
         });
 
         document.addEventListener("keydown", function(event) {
-
             if (event.ctrlKey) {
                 event.preventDefault();
             }
-
             if (event.keyCode == 123) {
                 event.preventDefault();
             }
+        });
 
-        })
-
-        document.addEventListener('contextmenu',
-            event => event.preventDefault()
-        )
+        document.addEventListener('contextmenu', event => event.preventDefault());
 
         // Enkripsi sederhana
         const encrypt = (text) => {
@@ -295,7 +320,6 @@
             checkAllActions();
         }
 
-
         function checkAllActions() {
             const allCompleted = Object.values(actionsStatus).every(status => status === true);
             if (allCompleted) {
@@ -305,22 +329,107 @@
         }
 
         function unlockLink() {
-            // Simpan status di sessionStorage
             sessionStorage.setItem('actionsCompleted', 'true');
             window.location.href = 'https://www.canva.com/brand/join?token=uSJa9OfYlZYhRGDmSJM6OA&referrer=team-invite';
         }
 
-        // Check if actions were already completed
         window.onload = function() {
-            // Reset session data setiap kali halaman dibuka
-            sessionStorage.removeItem('actionsCompleted');
+            const music = document.getElementById("background-music");
+            const musicProgress = document.getElementById("music-progress");
 
-            // Menghapus status setiap tindakan di sessionStorage, jika sudah ada
-            Object.keys(actionsStatus).forEach(action => sessionStorage.removeItem(`actionCompleted_${action}`));
+            // Coba memutar musik saat halaman dimuat
+            music.play().catch(error => {
+                console.log("Auto-play diblokir oleh browser. User perlu mengaktifkannya secara manual.");
+            });
 
-            if (sessionStorage.getItem('actionsCompleted') === 'true') {
-                Object.keys(actionsStatus).forEach(action => completeAction(action));
+            // Update progress bar setiap kali waktu musik berubah
+            music.addEventListener("timeupdate", () => {
+                const progress = (music.currentTime / music.duration) * 100;
+                musicProgress.value = progress;
+            });
+        };
+
+
+        const playlist = [
+            "music/1.mp3",
+            "music/2.mp3",
+            "music/3.mp3",
+            "music/4.mp3",
+            "music/5.mp3",
+            "music/6.mp3"
+        ];
+
+        const backgroundMusic = document.getElementById("background-music");
+        const musicIcon = document.getElementById("music-icon");
+        const musicProgress = document.getElementById("music-progress");
+        const currentTimeDisplay = document.getElementById("current-time");
+        const durationDisplay = document.getElementById("duration");
+        const volumeControl = document.getElementById("volume-control");
+
+        let currentSongIndex = Math.floor(Math.random() * playlist.length); // Pilih lagu acak untuk awal
+
+        // Atur volume awal
+        backgroundMusic.volume = 0.5;
+
+        function loadSong(index) {
+            backgroundMusic.src = playlist[index];
+            backgroundMusic.load();
+            backgroundMusic.play().catch(error => {
+                console.log("Auto-play diblokir oleh browser. User perlu mengaktifkannya secara manual.");
+            });
+            updateIcon();
+        }
+
+        function toggleMusic() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            } else {
+                backgroundMusic.pause();
             }
+            updateIcon();
+        }
+
+        function updateIcon() {
+            if (backgroundMusic.paused) {
+                musicIcon.classList.replace("fa-pause-circle", "fa-play-circle");
+            } else {
+                musicIcon.classList.replace("fa-play-circle", "fa-pause-circle");
+            }
+        }
+
+        backgroundMusic.onloadedmetadata = () => {
+            durationDisplay.textContent = formatTime(backgroundMusic.duration);
+        };
+
+        backgroundMusic.ontimeupdate = () => {
+            const progress = (backgroundMusic.currentTime / backgroundMusic.duration) * 100;
+            musicProgress.value = progress;
+            currentTimeDisplay.textContent = formatTime(backgroundMusic.currentTime);
+        };
+
+        backgroundMusic.onended = () => {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length; // Lanjut ke lagu berikutnya
+            loadSong(currentSongIndex);
+        };
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+            return `${minutes}:${seconds}`;
+        }
+
+        volumeControl.addEventListener("input", () => {
+            backgroundMusic.volume = volumeControl.value;
+        });
+
+        // Muat dan mainkan lagu pertama (acak)
+        loadSong(currentSongIndex);
+
+        // Coba otomatis memutar musik saat halaman dimuat
+        window.onload = function() {
+            backgroundMusic.play().catch(error => {
+                console.log("Auto-play diblokir oleh browser. User perlu mengaktifkannya secara manual.");
+            });
         };
     </script>
 </body>

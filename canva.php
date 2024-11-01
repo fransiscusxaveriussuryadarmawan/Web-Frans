@@ -17,7 +17,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/about.jpg" rel="icon">
+    <link href="img/about.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="canva.php" class="nav-item nav-link active">Home</a>
+                        <a href="index.php" class="nav-item nav-link active">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
                         <a href="https://www.youtube.com/channel/UCjaCtD3TxPIaW7FFij_puRw?sub_confirmation=1" class="nav-item nav-link">👉Subscribe👈</a>
                         <div class="nav-item dropdown">
