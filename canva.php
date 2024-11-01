@@ -88,23 +88,17 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                     <h2 class="text-white mb-4 animated slideInDown">😉</h2>
                     <div class="row g-5 align-items-end">
                         <div class="col-lg-6 text-center text-lg-start">
-
-                            <h1 class="text-white mb-4 animated slideInDown">Version Canva Pro (30 Days) --- Expired 1
-                                December 2024 Premium<br> ⭐⭐⭐⭐⭐</h1>
-                            <p class="text-white pb-3 animated slideInDown">SPECIAL NOVEMBER 2024 (JADI KLIK OTOMATIS
-                                MASUK
-                                TEAM PREMIUM) dengan begitu bisa akses semua fitur seperti unlock all templates,
-                                effects, dan lainnya. Thank You For Your Support !!</p>
-                            <a href="https://sub4unlock.io/dS4RV" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Click
-                                This For Join</a>
-                            <a href="https://sub4unlock.io/dS4RV" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">SPECIAL TEAM 47
-                                [1]</a>
+                            <h1 class="text-white mb-4 animated slideInDown">Version Canva Pro (30 Days) --- Expired 1 December 2024 Premium<br> ⭐⭐⭐⭐⭐</h1>
+                            <p class="text-white pb-3 animated slideInDown">SPECIAL NOVEMBER 2024 (JADI KLIK OTOMATIS MASUK TEAM PREMIUM) dengan begitu bisa akses semua fitur seperti unlock all templates, effects, dan lainnya. Thank You For Your Support !!</p>
+                            <a href="https://sub4unlock.io/dS4RV" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Click This For Join</a>
+                            <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text=Halo%2C+saya+ingin+join+instan+Canva+Pro+dan+sudah+membayar+Rp1000" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Join Instan - Chat WA</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- Navbar & Hero End -->
