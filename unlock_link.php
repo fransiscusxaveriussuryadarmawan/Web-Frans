@@ -143,7 +143,7 @@
 <body>
     <div class="container">
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 2)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 3)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -326,7 +326,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=_ocBP1VlaRYXz1vzsnvwpA&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=hkmcdcqnLXHCbLo1VPqfjA&referrer=team-invite';
         }
 
         window.onload = function() {
