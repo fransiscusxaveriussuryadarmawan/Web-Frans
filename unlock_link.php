@@ -143,7 +143,7 @@
 <body>
     <div class="container">
         <div class="card">
-            <h1>Unlock Exclusive Content</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 2)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
