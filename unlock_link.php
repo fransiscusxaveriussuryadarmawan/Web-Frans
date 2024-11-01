@@ -326,7 +326,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=uSJa9OfYlZYhRGDmSJM6OA&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=_ocBP1VlaRYXz1vzsnvwpA&referrer=team-invite';
         }
 
         window.onload = function() {
