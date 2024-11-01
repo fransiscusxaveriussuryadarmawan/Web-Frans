@@ -80,7 +80,7 @@ $title = "FransXeagle YouTube";
             <div class="container-xxl bg-primary hero-header">
 
                 <div class="text-center text-white">
-                    <h1 class="mb-4 fw-bold" style="color: #FFD700;">Join Instan Canva Pro 1 Detik</h1>
+                    <h1 class="mb-4 fw-bold" style="color: #FFD700;">Join Instan Canva Pro 1 Detik (Auto Team Brand Designer)</h1>
                     <p class="mb-4 fs-5">Nikmati akses eksklusif Canva Pro dengan langkah mudah berikut:</p>
                 </div>
 
@@ -91,7 +91,7 @@ $title = "FransXeagle YouTube";
                             <ol class="list-group list-group-numbered">
                                 <li class="list-group-item d-flex align-items-center">
                                     <i class="fa fa-qrcode me-3 text-primary" style="font-size: 1.5rem;"></i>
-                                    <span>Scan gambar QRIS di bawah ini dan lakukan pembayaran sebesar <strong>Rp999</strong>.</span>
+                                    <span>Scan gambar QRIS di bawah ini dan lakukan pembayaran sebesar <strong>Rp 1.000</strong>.</span>
                                 </li>
                                 <li class="list-group-item d-flex align-items-center">
                                     <i class="fab fa-whatsapp me-3 text-success" style="font-size: 1.5rem;"></i>

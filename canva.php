@@ -112,7 +112,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <div class="col-lg-5 mb-4">
                             <div class="card shadow-sm p-4 bg-light border-primary">
                                 <h3 class="text-primary text-center mb-3">Opsi 1: Join via Link Subscribe</h3>
-                                <p class="text-center">(Cocok untuk orang yang sudah paham dan sabar).</p>
+                                <p class="text-center">(Cocok untuk orang yang sudah paham sesuai video di YouTube).</p>
                                 <div class="text-center mt-4">
                                     <a href="unlock_link.php" class="btn btn-primary btn-lg">Click This For Join</a>
                                 </div>
@@ -123,7 +123,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <div class="col-lg-5 mb-4">
                             <div class="card shadow-sm p-4 bg-light border-secondary">
                                 <h3 class="text-secondary text-center mb-3">Opsi 2: Join via QRIS WA</h3>
-                                <p class="text-center">(Cocok untuk orang yang ingin INSTAN 1 detik).</p>
+                                <p class="text-center">(Cocok untuk orang yang ingin mode INSTANS 1 detik hanya <b>Rp 1.000</b>).</p>
                                 <div class="text-center mt-4">
                                     <a href="join_instan.php" class="btn btn-secondary btn-lg">Join via QRIS</a>
                                 </div>
