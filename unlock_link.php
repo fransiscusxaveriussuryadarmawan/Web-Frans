@@ -307,7 +307,7 @@
         function unlockLink() {
             // Simpan status di sessionStorage
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://fransxeagle.com/';
+            window.location.href = 'https://www.canva.com/brand/join?token=uSJa9OfYlZYhRGDmSJM6OA&referrer=team-invite';
         }
 
         // Check if actions were already completed
