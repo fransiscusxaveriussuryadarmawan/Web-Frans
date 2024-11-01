@@ -226,7 +226,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <script src="js/main.js"></script>
 
     <script>
-        if (window.location.hostname !== "fransxeagle.com") {
+        if (window.location.hostname !== "fransxeagle.com" && window.location.hostname !== "localhost") {
             document.body.innerHTML = "<h1>Akses Ditolak</h1>";
         }
 

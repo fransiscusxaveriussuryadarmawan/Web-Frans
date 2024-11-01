@@ -58,7 +58,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PFK425');
 
-        if (window.location.hostname !== "fransxeagle.com") {
+        if (window.location.hostname !== "fransxeagle.com" && window.location.hostname !== "localhost") {
             document.body.innerHTML = "<h1>Akses Ditolak</h1>";
         }
 
