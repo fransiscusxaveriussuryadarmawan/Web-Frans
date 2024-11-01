@@ -25,7 +25,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -66,15 +66,15 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="canva.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="canva.php" class="nav-item nav-link active">Home</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
                         <a href="https://www.youtube.com/channel/UCjaCtD3TxPIaW7FFij_puRw?sub_confirmation=1" class="nav-item nav-link">👉Subscribe👈</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Link</a>
                             <div class="dropdown-menu m-0">
-                                <a href="contact.html" class="dropdown-item">Group WhatsApp</a>
+                                <a href="contact.php" class="dropdown-item">Group WhatsApp</a>
                                 <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0" class="dropdown-item">PC WhatsApp</a>
-                                <a href="index.html" class="dropdown-item">Happy Page</a>
+                                <a href="index.php" class="dropdown-item">Happy Page</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -116,6 +116,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/FKL5cUbfjlr1McmU6C4Ngq">Group WhatsApp 1.0</a>.</p>
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/GPI64rZUCEiKETE5ax6yWL">Group WhatsApp 2.0 (Jika Full)</a>.</p>
+                            <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/LGeUIZpLfWR1ZDd1MkIfm4">Group WhatsApp 3.0 (Jika Full)</a>.</p>
                             <p class="text-center mb-4">Jika ada pertanyaan silakan ditanyakan, namun beberapa pertanyaan (pasti beberapa yang sudah dijawab pada deskripsi grup WA | Jadi Silakan Join). <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0">Personal Chat</a>.</p>
                         </div>
                     </div>
@@ -123,7 +124,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
             </div>
         </div>
         <!-- Contact End -->
-        
+
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -137,8 +138,8 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=https://twitter.com/fransxeagle><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=https://www.facebook.com/fxsurya27><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=https://www.instagram.com/suryasidarmawan/><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=https://www.linkedin.com/in/fransiscus-xaverius-surya-darmawan-a34325280/><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=https://www.instagram.com/suryasidarmawan /><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=https://www.linkedin.com/in/fransiscus-xaverius-surya-darmawan-a34325280 /><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
@@ -186,10 +187,10 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="https://fransxeagle.com/">https://fransxeagle.com/</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://fransxeagle.com/">Jessica Gabrielle</a>
+                            &copy; <a class="border-bottom" href="https://fransxeagle.com/">https://fransxeagle.com/</a>, All Right Reserved.
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">Jessica Gabrielle</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
