@@ -172,26 +172,46 @@
     </div>
 
     <script>
+        if (window.location.hostname !== "fransxeagle.com") {
+            document.body.innerHTML = "<h1>Akses Ditolak</h1>";
+        }
+
+        console.log = function() {};
+
+        setInterval(function() {
+            if (window.console && (console.__proto__.dir || console.__proto__.log)) {
+                const before = new Date();
+                debugger;
+                const after = new Date();
+                if (after - before > 100) {
+                    alert("Developer Tools terdeteksi! Anda tidak diizinkan mengakses kode sumber ini.");
+                }
+            }
+        }, 1000);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+                event.preventDefault();
+            }
+            if ((event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "I")) || event.keyCode === 123) {
+                event.preventDefault();
+            }
+        });
+
         document.addEventListener("keydown", function(event) {
 
             if (event.ctrlKey) {
-
                 event.preventDefault();
-
             }
 
             if (event.keyCode == 123) {
-
                 event.preventDefault();
-
             }
 
         })
 
         document.addEventListener('contextmenu',
-
             event => event.preventDefault()
-
         )
 
         // Enkripsi sederhana
