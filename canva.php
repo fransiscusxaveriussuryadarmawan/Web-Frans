@@ -114,7 +114,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                                 <h3 class="text-primary text-center mb-3">Opsi 1: Join via Link Subscribe</h3>
                                 <p class="text-center">(Cocok untuk orang yang sudah paham dan sabar).</p>
                                 <div class="text-center mt-4">
-                                    <a href="https://sub4unlock.io/dS4RV" class="btn btn-primary btn-lg">Click This For Join</a>
+                                    <a href="unlock_link.php" class="btn btn-primary btn-lg">Click This For Join</a>
                                 </div>
                             </div>
                         </div>
