@@ -137,13 +137,55 @@
             color: #8D58BF;
             cursor: pointer;
         }
+
+
+        .note {
+            display: block;
+            background-color: #ffebcc;
+            border-left: 5px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #8d4b00;
+            border-radius: 5px;
+        }
+
+        .note a {
+            font-weight: bold;
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .note a:hover {
+            text-decoration: underline;
+        }
+
+        .note-designer {
+            display: block;
+            background-color: #e6f7ff;
+            border-left: 5px solid #3399ff;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #006699;
+            border-radius: 5px;
+        }
+
+        .note-designer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .note-designer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 3)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 8)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -198,6 +240,16 @@
                 <i class="fas fa-volume-up"></i>
             </div>
 
+        </div>
+
+        <!-- Notifikasi Tim Penuh -->
+        <div class="note">
+            Jika Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut.
+        </div>
+
+        <!-- Notifikasi Brand Designer -->
+        <div class="note-designer">
+            Jika ingin menjadi Brand Designer, <strong>kirim alamat email dan infokan tim Anda ke</strong> <a href="https://wa.me/6281234567890"><strong>chat admin (Klik Disini)</strong></a>. Kami akan tambahkan Anda ke dalam tim sebagai Brand Designer.
         </div>
     </div>
 
@@ -326,7 +378,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=hkmcdcqnLXHCbLo1VPqfjA&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=wlfWqvSBguZ3tB9GYFij_A&referrer=team-invite';
         }
 
         window.onload = function() {
