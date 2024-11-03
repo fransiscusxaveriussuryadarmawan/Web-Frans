@@ -55,6 +55,12 @@
             margin-bottom: 2rem;
         }
 
+        .updated-at {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 1.5rem;
+        }
+
         .action-btn {
             display: flex;
             align-items: center;
@@ -138,7 +144,6 @@
             cursor: pointer;
         }
 
-
         .note {
             display: block;
             background-color: #ffebcc;
@@ -184,8 +189,14 @@
 
 <body>
     <div class="container">
+
+        <!-- Notifikasi Tim Penuh -->
+        <div class="note">
+            Jika Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut.
+        </div>
+
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 10)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 12)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -240,11 +251,11 @@
                 <i class="fas fa-volume-up"></i>
             </div>
 
-        </div>
+            <!-- Updated At Timestamp -->
+            <div class="updated-at">
+                <span>Updated At: <span id="update-timestamp">2024-11-03 12:10:06</span></span>
+            </div>
 
-        <!-- Notifikasi Tim Penuh -->
-        <div class="note">
-            Jika Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut.
         </div>
 
         <!-- Notifikasi Brand Designer -->
@@ -378,7 +389,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=2noGR78oi9EyXcIR_nvNaA&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=smhU1NKL-923bENwV1ZECQ&referrer=team-invite';
         }
 
         window.onload = function() {
@@ -395,6 +406,11 @@
                 const progress = (music.currentTime / music.duration) * 100;
                 musicProgress.value = progress;
             });
+
+            // Display current date and time in the "Updated At" section
+            const updateTimestamp = document.getElementById("update-timestamp");
+            const now = new Date();
+            updateTimestamp.textContent = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
         };
 
 
