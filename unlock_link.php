@@ -196,7 +196,7 @@
         </div>
 
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 12)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 13)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -253,7 +253,7 @@
 
             <!-- Updated At Timestamp -->
             <div class="updated-at">
-                <span>Updated At: <span id="update-timestamp">2024-11-03 12:10:06</span></span>
+                <span>Updated At: <span id="update-timestamp">2024-11-03 15:50:06 WIB</span></span>
             </div>
 
         </div>
@@ -389,7 +389,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=smhU1NKL-923bENwV1ZECQ&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=Gsbwn-IUAY57g7rs9Itseg&referrer=team-invite';
         }
 
         window.onload = function() {
