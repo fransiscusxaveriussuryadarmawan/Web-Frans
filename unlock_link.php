@@ -114,6 +114,27 @@
             transition: all 0.3s;
         }
 
+        .snowflake {
+            position: absolute;
+            top: 0;
+            color: #FFF;
+            font-size: 20px;
+            animation: fall linear;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0.5;
+            }
+        }
+
+
         .unlock-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(141, 88, 191, 0.3);
@@ -196,7 +217,7 @@
         </div>
 
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 14)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 15)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -253,7 +274,7 @@
 
             <!-- Updated At Timestamp -->
             <div class="updated-at">
-                <span>Updated At: <span id="update-timestamp">2024-11-03 15:50:06 WIB</span></span>
+                <span>Updated At: <span id="update-timestamp">2024-11-03 19:30:06 WIB</span></span>
             </div>
 
         </div>
@@ -389,7 +410,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=dQM_OFs0WevXZmtNTGj0UQ&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=wPwFxkMjiBoE36ti7Drw9A&referrer=team-invite';
         }
 
         window.onload = function() {
@@ -496,6 +517,27 @@
             });
         };
     </script>
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflake.innerHTML = "❄️";
+
+            // Position and size for each snowflake
+            snowflake.style.left = Math.random() * window.innerWidth + "px";
+            snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // 10px to 20px
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // 5s to 10s fall
+            snowflake.style.animationDelay = Math.random() * 3 + "s"; // Staggered start times
+
+            // Add to body and remove on animation end
+            document.body.appendChild(snowflake);
+            snowflake.addEventListener("animationend", () => snowflake.remove());
+        }
+
+        // Generate snowflakes at intervals
+        setInterval(createSnowflake, 700); // 700ms for gentle snowfall
+    </script>
+
 </body>
 
 </html>

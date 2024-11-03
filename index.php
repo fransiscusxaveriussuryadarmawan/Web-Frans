@@ -50,6 +50,28 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <link rel="stylesheet" href="mobirise/style.css">
 
     <style>
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            color: white;
+            font-size: 1.2em;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
         /* Music Control Container Styling */
         .music-control,
         .volume-control,
@@ -628,6 +650,27 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
             document.addEventListener('contextmenu',
                 event => event.preventDefault()
             )
+        </script>
+
+        <script>
+            function createSnowflake() {
+                const snowflake = document.createElement("div");
+                snowflake.classList.add("snowflake");
+                snowflake.innerHTML = "❄️";
+
+                // Posisi awal dan ukuran acak
+                snowflake.style.left = Math.random() * window.innerWidth + "px";
+                snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // ukuran antara 10px - 20px
+                snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // 5s hingga 10s
+                snowflake.style.animationDelay = Math.random() * 3 + "s"; // jeda acak antara 0s hingga 3s
+
+                // Tambahkan elemen ke body dan hapus setelah animasi selesai
+                document.body.appendChild(snowflake);
+                snowflake.addEventListener("animationend", () => snowflake.remove());
+            }
+
+            // Interval untuk membuat efek salju secara berkala
+            setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
         </script>
 
         </body>

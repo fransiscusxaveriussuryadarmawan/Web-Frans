@@ -66,6 +66,28 @@ $title = "FransXeagle YouTube";
             cursor: pointer;
         }
 
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            color: white;
+            font-size: 1.2em;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
         /* Progress Bar Styling */
         #music-progress {
             width: 100%;
@@ -138,7 +160,7 @@ $title = "FransXeagle YouTube";
                     <div class="navbar-nav mx-auto py-0">
                         <a href="canva.php" class="nav-item nav-link active">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
-                        <a href="https://www.youtube.com/channel/UCjaCtD3TxPIaW7FFij_puRw?sub_confirmation=1" class="nav-item nav-link">👉Subscribe👈</a>
+                        <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">👉Subscribe👈</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Link</a>
                             <div class="dropdown-menu m-0">
@@ -445,6 +467,7 @@ $title = "FransXeagle YouTube";
             });
         };
     </script>
+
 </body>
 
 </html>
