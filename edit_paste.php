@@ -1,6 +1,20 @@
 <?php
 session_start();
 
+// Set the timeout duration (in seconds)
+$timeout_duration = 600; // 10 minutes
+
+// Check if the user has been inactive for too long
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+    // Last request was more than 10 minutes ago, destroy session
+    session_unset();     // Unset session variables
+    session_destroy();   // Destroy session data
+    header("Location: " . $_SERVER['PHP_SELF']); // Redirect to the same page
+    exit;
+}
+// Update last activity time stamp
+$_SESSION['LAST_ACTIVITY'] = time();
+
 // Define the admin password (replace with a secure password)
 define('ADMIN_PASSWORD', 'Mesch454*');
 
