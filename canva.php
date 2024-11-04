@@ -48,6 +48,23 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <link href="css/style.css" rel="stylesheet">
 
     <style>
+        /* Tambahkan di dalam tag <style> yang sudah ada */
+        .mouse-snowflake {
+            position: fixed;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            animation: mouseFall linear forwards;
+        }
+
+        @keyframes mouseFall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
         .snowflake {
             position: fixed;
             top: -10px;
@@ -950,6 +967,68 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 
         // Interval untuk membuat efek salju secara berkala
         setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
+
+        // Ganti script efek salju mouse yang sebelumnya dengan yang ini
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.body;
+            let mouseX = 0;
+            let mouseY = 0;
+            let lastCreateTime = 0;
+
+            // Fungsi untuk membuat kepingan salju di sekitar mouse
+            function createMouseSnowflake(x, y) {
+                const currentTime = Date.now();
+                // Tambahkan delay minimal 100ms antara pembuatan salju
+                if (currentTime - lastCreateTime < 100) return;
+
+                lastCreateTime = currentTime;
+
+                const snowflake = document.createElement('div');
+                snowflake.className = 'mouse-snowflake';
+
+                // Ukuran lebih kecil
+                const size = Math.random() * 3 + 1; // Ukuran 1-4px
+                snowflake.style.width = size + 'px';
+                snowflake.style.height = size + 'px';
+
+                // Offset yang lebih besar agar lebih tersebar
+                const offsetX = (Math.random() - 0.5) * 30;
+                const offsetY = (Math.random() - 0.5) * 10;
+                snowflake.style.left = (x + offsetX) + 'px';
+                snowflake.style.top = (y + offsetY) + 'px';
+
+                // Durasi jatuh yang lebih cepat
+                const duration = Math.random() * 2 + 1; // 1-3 detik
+                snowflake.style.animation = `mouseFall ${duration}s linear forwards`;
+
+                container.appendChild(snowflake);
+
+                setTimeout(() => {
+                    snowflake.remove();
+                }, duration * 1000);
+            }
+
+            // Tambahkan throttling untuk mousemove
+            let isThrottled = false;
+
+            document.addEventListener('mousemove', (e) => {
+                if (isThrottled) return;
+
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                // Kurangi probabilitas pembuatan salju
+                if (Math.random() < 0.15) { // Dikurangi dari 0.3 menjadi 0.15
+                    createMouseSnowflake(mouseX, mouseY);
+                }
+
+                // Throttle mouse movement
+                isThrottled = true;
+                setTimeout(() => {
+                    isThrottled = false;
+                }, 50); // 50ms delay
+            });
+        });
     </script>
 
 
