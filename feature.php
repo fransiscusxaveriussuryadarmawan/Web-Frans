@@ -2,6 +2,9 @@
 // Header untuk mencegah caching
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 1 Jan 2000 00:00:00 GMT"); // Tanggal masa lalu
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";

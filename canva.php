@@ -1,6 +1,9 @@
 <?php
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 1 Jan 2000 00:00:00 GMT"); // Tanggal masa lalu
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
@@ -211,7 +214,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">
-                                Version Canva Pro (30 Days) --- Expired 3 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                                Version Canva Pro (30 Days) --- Expired 4 December 2024 Premium<br> ⭐⭐⭐⭐⭐
                             </h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!

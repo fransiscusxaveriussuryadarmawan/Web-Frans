@@ -1,3 +1,9 @@
+<?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -230,11 +236,11 @@
 
         <!-- Notifikasi Tim Penuh -->
         <div class="note">
-            Jika Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut.
+            <strong>JIKA</strong>Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
         </div>
 
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 19)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 22)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -427,7 +433,7 @@
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=Opwb-2e3h9CGPt4ZCLvt7A&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=GvYFmyf6395GJj_bRgSfBQ&referrer=team-invite';
         }
 
         window.onload = function() {
