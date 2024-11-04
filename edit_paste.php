@@ -41,44 +41,73 @@ if (!isset($_SESSION['authenticated'])) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Authorize Access</title>
             <style>
+                /* Root Colors */
+                :root {
+                    --primary: #6C63FF;
+                    --secondary: #FFC107;
+                    --bg-light: #f3f4f6;
+                    --bg-dark: #fff;
+                    --text-dark: #333;
+                    --text-light: #888;
+                }
+
+                /* Global Styles */
                 body {
                     font-family: Arial, sans-serif;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     height: 100vh;
-                    background-color: #f0f0f0;
+                    margin: 0;
+                    background-color: var(--bg-light);
                 }
 
+                /* Authentication Container */
                 .auth-container {
-                    background: #fff;
-                    padding: 20px;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    background: var(--bg-dark);
+                    padding: 30px 40px;
+                    border-radius: 12px;
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
                     text-align: center;
+                    width: 450px;
+                    max-width: 100%;
                 }
 
+                .auth-container h2 {
+                    color: var(--primary);
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    font-size: 1.5em;
+                }
+
+                /* Input and Button Styles */
                 input[type="password"],
                 button {
-                    padding: 10px;
+                    padding: 12px 16px;
                     width: 100%;
-                    margin-top: 10px;
-                    border-radius: 5px;
+                    border-radius: 6px;
                     border: 1px solid #ddd;
+                    font-size: 1em;
+                    margin-top: 12px;
                 }
 
                 button {
-                    background-color: #28a745;
+                    background-color: var(--primary);
                     color: #fff;
+                    border: none;
                     cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.3s ease;
                 }
 
                 button:hover {
-                    background-color: #218838;
+                    background-color: #5752d6;
                 }
 
+                /* Error Message */
                 .error {
-                    color: #ff0000;
+                    color: #d9534f;
+                    font-size: 0.9em;
                     margin-top: 10px;
                 }
             </style>
@@ -129,6 +158,7 @@ if (isset($_GET['id'])) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Edit Paste</title>
                 <style>
+                    /* Edit Container */
                     body {
                         font-family: Arial, sans-serif;
                         display: flex;
@@ -140,10 +170,18 @@ if (isset($_GET['id'])) {
 
                     .edit-container {
                         background: #fff;
-                        padding: 20px;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        width: 400px;
+                        padding: 30px;
+                        border-radius: 12px;
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                        width: 600px;
+                        max-width: 100%;
+                    }
+
+                    .edit-container h2 {
+                        color: #333;
+                        font-weight: bold;
+                        font-size: 1.6em;
+                        margin-bottom: 20px;
                         text-align: center;
                     }
 
@@ -151,20 +189,31 @@ if (isset($_GET['id'])) {
                     textarea,
                     button {
                         width: 100%;
-                        padding: 10px;
-                        margin-top: 10px;
-                        border-radius: 5px;
+                        padding: 12px;
+                        margin-top: 12px;
+                        border-radius: 6px;
                         border: 1px solid #ddd;
+                        font-size: 1em;
                     }
 
                     button {
                         background-color: #007bff;
                         color: #fff;
                         cursor: pointer;
+                        font-weight: bold;
+                        transition: background-color 0.3s ease;
                     }
 
                     button:hover {
                         background-color: #0056b3;
+                    }
+
+                    label {
+                        font-weight: bold;
+                        margin-top: 15px;
+                        display: block;
+                        color: #666;
+                        font-size: 0.9em;
                     }
                 </style>
             </head>
@@ -197,3 +246,4 @@ if (isset($_GET['id'])) {
 } else {
     echo "ID tidak disediakan.";
 }
+?>
