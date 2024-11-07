@@ -240,7 +240,7 @@ header("Pragma: no-cache");
         </div>
 
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 44)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 45)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -433,7 +433,7 @@ header("Pragma: no-cache");
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=NrpJwG_G0bPEpHBa7EX26w&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=0HABkenXNEza613etTYcGQ&referrer=team-invite';
         }
 
         window.onload = function() {
