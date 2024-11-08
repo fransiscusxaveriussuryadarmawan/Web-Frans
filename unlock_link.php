@@ -241,10 +241,6 @@ require 'visitors.php';
             <strong>JIKA</strong>Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
         </div>
 
-        <span class="nav-link link text-white display-4">
-            Visitors: <strong><?php echo $total_visitors; ?></strong>
-        </span>
-
         <div class="card">
             <h1>Unlock Exclusive Content (F48 TITIK 55)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
@@ -305,6 +301,10 @@ require 'visitors.php';
             <div class="updated-at">
                 <span>Updated At: <span id="update-timestamp">2024-11-05 21:30:06 WIB</span></span>
             </div>
+
+            <span class="updated-at">
+                Visitors: <strong><?php echo $total_visitors; ?></strong>
+            </span>
 
         </div>
 
