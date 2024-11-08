@@ -9,6 +9,10 @@ header("Pragma: no-cache");
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
+require 'config.php';
+$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
+$row = $result->fetch_assoc();
+$total_visitors = $row['total_visitors'];
 ?>
 
 <!DOCTYPE html>
@@ -198,6 +202,11 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+                        <span class="nav-link link text-white display-4">
+                            Visitors: <strong><?php echo $total_visitors; ?></strong>
+                        </span>
+
                     </div>
                     <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Always Smile</a>
                 </div>
@@ -211,9 +220,9 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                             <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                                    <li class="breadcrumb-item"><a class="" href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="" href="#">Pages</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
                                 </ol>
                             </nav>
                         </div>
@@ -237,6 +246,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/FKL5cUbfjlr1McmU6C4Ngq">Group WhatsApp 1.0</a>.</p>
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/GPI64rZUCEiKETE5ax6yWL">Group WhatsApp 2.0 (Jika Full)</a>.</p>
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/LGeUIZpLfWR1ZDd1MkIfm4">Group WhatsApp 3.0 (Jika Full)</a>.</p>
+                            <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/DXkN4HuO0Ec5OXnO2p2yKT">Group WhatsApp 4.0 (Jika Full)</a>.</p>
                             <p class="text-center mb-4">Jika ada pertanyaan silakan ditanyakan, namun beberapa pertanyaan (pasti beberapa yang sudah dijawab pada deskripsi grup WA | Jadi Silakan Join). <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0">Personal Chat</a>.</p>
                         </div>
                     </div>
@@ -254,7 +264,7 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <p class="section-title text-white h5 mb-4">Address<span></span></p>
                         <p><i class="fa fa-map-marker-alt me-3"></i>45 St John, California</p>
                         <p><i class="fa fa-phone-alt me-3"></i>+62 821 3861 6235</p>
-                        <p><i class="fa fa-envelope me-3"></i>fransxeagle@edufrancis.me</p>
+                        <p><i class="fa fa-envelope me-3"></i>admin@fransxeagle.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=https://twitter.com/fransxeagle><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=https://www.facebook.com/fxsurya27><i class="fab fa-facebook-f"></i></a>

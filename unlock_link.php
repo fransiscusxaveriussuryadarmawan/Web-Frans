@@ -2,6 +2,11 @@
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
+
+require 'config.php';
+$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
+$row = $result->fetch_assoc();
+$total_visitors = $row['total_visitors'];
 ?>
 
 <!DOCTYPE html>
@@ -239,8 +244,12 @@ header("Pragma: no-cache");
             <strong>JIKA</strong>Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
         </div>
 
+        <span class="nav-link link text-white display-4">
+            Visitors: <strong><?php echo $total_visitors; ?></strong>
+        </span>
+
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 53)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 55)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -433,7 +442,7 @@ header("Pragma: no-cache");
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=zQghpz_s5nqjoOUrXqzi0g&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=O1pTm28qRj-uWc9-N8fs4g&referrer=team-invite';
         }
 
         window.onload = function() {

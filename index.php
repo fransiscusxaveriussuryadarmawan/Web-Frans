@@ -9,6 +9,43 @@ header("Pragma: no-cache");
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
+session_start();
+require 'config.php'; // Mengimpor file koneksi database
+
+// Fungsi untuk mendapatkan IP address pengunjung
+function getUserIP()
+{
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
+// Dapatkan alamat IP pengunjung
+$ip_address = getUserIP();
+
+// Cek apakah alamat IP ini sudah dikunjungi dalam sesi ini
+if (!isset($_SESSION['visited'])) {
+    // Masukkan data ke dalam database
+    $stmt = $conn->prepare("INSERT INTO visitors (ip_address) VALUES (?)");
+    $stmt->bind_param("s", $ip_address);
+    $stmt->execute();
+    $stmt->close();
+
+    // Set sesi untuk mencegah pencatatan berulang dalam sesi yang sama
+    $_SESSION['visited'] = true;
+}
+
+// Query untuk menghitung jumlah total visitors
+$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
+$row = $result->fetch_assoc();
+$total_visitors = $row['total_visitors'];
+
+$conn->close();
 ?>
 
 
@@ -20,6 +57,11 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 
     <!-- CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -179,8 +221,9 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a></span>
+                    <span class="navbar-caption-wrap">
+                        <a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a>
+                    </span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="hamburger">
@@ -193,18 +236,21 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="index.php">Home</a></li>
-
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="about.php">About</a></li>
-
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="apk.php">Link Apk</a></li>
-
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="feature.php">Features</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts.php">Contacts</a></li>
+                        <!-- Tambahkan elemen Total Visitors di sini -->
+                        <li class="nav-item">
+                            <span class="nav-link link text-white display-4">
+                                Visitors: <strong><?php echo $total_visitors; ?></strong>
+                            </span>
+                        </li>
                     </ul>
-
-                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary-outline display-4" href=""><span></span>GET STARTED</a></div>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-sm btn-primary-outline display-4" href="">GET STARTED</a>
+                    </div>
                 </div>
             </div>
         </nav>

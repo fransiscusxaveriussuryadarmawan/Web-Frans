@@ -9,10 +9,44 @@ header("Pragma: no-cache");
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
-require 'config.php';
+
+session_start();
+require 'config.php'; // Mengimpor file koneksi database
+
+// Fungsi untuk mendapatkan IP address pengunjung
+function getUserIP()
+{
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
+// Dapatkan alamat IP pengunjung
+$ip_address = getUserIP();
+
+// Cek apakah alamat IP ini sudah dikunjungi dalam sesi ini
+if (!isset($_SESSION['visited'])) {
+    // Masukkan data ke dalam database
+    $stmt = $conn->prepare("INSERT INTO visitors (ip_address) VALUES (?)");
+    $stmt->bind_param("s", $ip_address);
+    $stmt->execute();
+    $stmt->close();
+
+    // Set sesi untuk mencegah pencatatan berulang dalam sesi yang sama
+    $_SESSION['visited'] = true;
+}
+
+// Query untuk menghitung jumlah total visitors
 $result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
 $row = $result->fetch_assoc();
 $total_visitors = $row['total_visitors'];
+
+$conn->close();
 ?>
 
 
@@ -34,7 +68,7 @@ $total_visitors = $row['total_visitors'];
     <meta name="generator" content="Mobirise v5.0.2, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
-    <meta name="description" content="New SolutionM4 Theme HTML Template - Download Now!">
+    <meta name="description" content="FransXeagle YouTube Free Informative Tutorial">
 
     <!-- Favicon -->
     <link href="img/about.png" rel="icon">
@@ -69,6 +103,28 @@ $total_visitors = $row['total_visitors'];
 
         @keyframes mouseFall {
             to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            color: white;
+            font-size: 1.2em;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
                 transform: translateY(100vh);
                 opacity: 0;
             }
@@ -143,40 +199,27 @@ $total_visitors = $row['total_visitors'];
         }
     </style>
 
-    <!-- Google Tag Manager-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-44RND6686W"></script>
     <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PFK425');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-44RND6686W');
     </script>
-    <!-- End Google Tag Manager -->
 
-</head>
-
-<body>
-
-    <!-- Google Tag Manager noscript-->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PFK425"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager noscript-->
     <section class="menu cid-s1YNw91RvB" once="menu" id="menu1-1">
 
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a></span>
+                    <span class="navbar-caption-wrap">
+                        <a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a>
+                    </span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="hamburger">
@@ -189,26 +232,25 @@ $total_visitors = $row['total_visitors'];
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="index.php">Home</a></li>
-
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="about.php">About</a></li>
-
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="apk.php">Link Apk</a></li>
-
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="feature.php">Features</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts.php">Contacts</a></li>
+                        <!-- Tambahkan elemen Total Visitors di sini -->
                         <li class="nav-item">
                             <span class="nav-link link text-white display-4">
                                 Visitors: <strong><?php echo $total_visitors; ?></strong>
                             </span>
                         </li>
                     </ul>
-
-                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary-outline display-4" href=""><span></span>GET STARTED</a></div>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-sm btn-primary-outline display-4" href="">GET STARTED</a>
+                    </div>
                 </div>
             </div>
         </nav>
+
     </section>
 
     <section class="header3 cid-s1YNmF9EpW mbr-parallax-background" id="header3-0">
@@ -234,9 +276,6 @@ $total_visitors = $row['total_visitors'];
 
     <section class="features4 cid-s1YNzGfN84" id="features4-2">
 
-
-
-
         <div class="container mbr-white">
             <div class="row justify-content-center">
                 <div class="card first col-12 col-md-6 col-lg-4">
@@ -260,15 +299,15 @@ $total_visitors = $row['total_visitors'];
                     <div class="card-wrapper align-center">
                         <div class="img-wrapper">
 
-                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20Akun%20*Github%20Student%20.*%0A%0AHarga%20Satuan%20:%20Rp%2015.000%20"><img src="img/github.jpeg" alt="TOD"> </a>
+                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20Akun%20*Github%20Student%20.*%0A%0AHarga%20Satuan%20:%20Rp%2040.000%20"><img src="img/github.jpeg" alt="TOD"> </a>
                             <a class="nav-item nav-link"></a>
 
                         </div>
-                        <div class="card-box align-center">
+                        <div class=>
 
                             <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">GITHUB STUDENT PACK</h4>
                             <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Full Benefit Github Student (Azure, Domain, DO, etc)</p>
+                                Full Benefit Github Student (Azure, Domain, DO, etc) @Rp 100.000</p>
 
                         </div>
                     </div>
@@ -285,7 +324,7 @@ $total_visitors = $row['total_visitors'];
 
                             <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL NUMBER</h4>
                             <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Get Virtual Number WhatsApp, Telegram, All APK</p>
+                                Get Virtual Number WhatsApp, Telegram, All APK @Rp 10.000 - @Rp 25.000</p>
 
                             <div class="link-wrapper">
 
@@ -305,7 +344,7 @@ $total_visitors = $row['total_visitors'];
 
                             <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL CREDIT CARD</h4>
                             <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Get Virtual Credit Card 2023</p>
+                                Get Virtual Credit Card 2024 @Rp 15.000</p>
 
                             <div class="link-wrapper">
 
@@ -313,11 +352,36 @@ $total_visitors = $row['total_visitors'];
                         </div>
                     </div>
                 </div>
+
                 <div class="card col-12 col-md-6 col-lg-4">
                     <div class="card-wrapper align-center">
                         <div class="img-wrapper">
 
-                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Owner%20Canva%20Education%20.*%0A%0AHarga%20Satuan%20:%20Rp%2050.000%20"><img src="img/com.png" alt="TOD"> </a>
+                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Email%20Yang%20Education%20.*%0A%0AEmail%20Domain%20EDU%20:%20Rp%2015.000%20%0AEmail%20Domain%20AC.ID%20:%20Rp%2025.000"><img src="img/edu.png" alt="TOD"> </a>
+                            <a class="nav-item nav-link"></a>
+
+                        </div>
+                        <div class="card-box align-center">
+
+                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">EMAIL EDU</h4>
+                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                domain.edu = Rp 15.000
+                                domain.ac.id (indonesia) = Rp 25.000</p>
+
+                            <div class="link-wrapper">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper align-center">
+                        <div class="img-wrapper">
+
+                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Owner%20Canva%20Education%20.*%0A%0AHarga%20Satuan%20:%20Rp%20100.000%20"><img src="img/com.png" alt="TOD"> </a>
                             <a class="nav-item nav-link"></a>
 
                         </div>
@@ -325,57 +389,136 @@ $total_visitors = $row['total_visitors'];
 
                             <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">OWNER CANVA EDU</h4>
                             <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Owner Canva Education Lifetime</p>
+                                Owner Canva Education Lifetime @Rp 100.000</p>
 
                             <div class="link-wrapper">
 
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card last col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper">
-
-                            <a href="https://www.youtube.com/@fransxeagle"><img src="img/about.png" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">TUTORIAL YOUTUBE</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Tips & Trick</p>
-
-                            <div class="link-wrapper">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kontrol musik -->
-                <div class="music-control text-center" onclick="toggleMusic()">
-                    <i id="music-icon" class="fas fa-play-circle"></i> Music
-                </div>
-                <audio id="background-music" type="audio/mpeg"></audio>
-                <progress id="music-progress" value="0" max="100" style="width: 100%;"></progress>
-                <div class="music-time">
-                    <span id="current-time">0:00</span>
-                    <span id="duration">0:00</span>
-                </div>
-
-                <!-- Kontrol Volume -->
-                <div class="volume-control">
-                    <i class="fas fa-volume-down"></i>
-                    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
-                    <i class="fas fa-volume-up"></i>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="content2 cid-s1YQ6E1SFC" id="content2-e">
+
+
+        <section class="testimonials1 cid-s1YPV5pGou" id="testimonials1-c">
+
+
+
+            <div class="container-fluid mbr-white">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12 col-lg-10 pb-5">
+                        <h4 class="main-title align-center pb-3 mbr-bold mbr-black mbr-fonts-style display-2">Customer Testimonials</h4>
+                        <h5 class="main-subtitle align-center mbr-regular mbr-black mbr-fonts-style display-7">Silakan cek testimoni untuk meningkatkan
+                            kepercayaan (bagi yang masih ragu)</h5>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="card col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper align-center">
+                            <div class="card-box ">
+                                <h3 class="mbr-subtitle mbr-semibold mbr-fonts-style display-5">Click This Picture</h3>
+                            </div>
+                            <a href="https://drive.google.com/drive/folders/1j1fqOTIg6M_o88ZiAeLZjByJ19EyJ04I?usp=sharing"><img src="img/check.jpeg" alt="TOD"> </a>
+                            <a class="nav-item nav-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+
+
+        <section class="map1 cid-s1YPq9DXRB" id="map1-6">
+
+
+
+            <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
+        </section>
+
+        <section class="contacts2 cid-s1YPyUn2on" id="contacts2-9">
+
+
+            <div class="container mbr-white">
+                <div class="row justify-content-center">
+                    <div class="card first col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-phone mobi-mbri"></span>
+                            </div>
+                            <div class="card-box align-center">
+
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">+62 821 3861 6235</h4>
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">+62 821 1000 5254</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Contact Me If You Need Help</p>
+
+                                <div class="link-wrapper">
+                                    <span class="mbr-iconfont mobi-mbri-right mobi-mbri"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-letter mobi-mbri"></span>
+                            </div>
+                            <div class="card-box align-center">
+
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">admin@fransxeagle.com</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Contact Me If You Need Help</p>
+
+                                <div class="link-wrapper">
+                                    <span class="mbr-iconfont mobi-mbri-right mobi-mbri"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card last col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-map-pin mobi-mbri"></span>
+                            </div>
+                            <div class="card-box align-center">
+
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">Office Street :XD</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Privacy Address</p>
+
+                                <div class="link-wrapper">
+                                    <span class="mbr-iconfont mobi-mbri-right mobi-mbri"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kontrol musik -->
+                    <div class="music-control text-center" onclick="toggleMusic()">
+                        <i id="music-icon" class="fas fa-play-circle"></i> Music
+                    </div>
+                    <audio id="background-music" type="audio/mpeg"></audio>
+                    <progress id="music-progress" value="0" max="100" style="width: 100%;"></progress>
+                    <div class="music-time">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                    <!-- Kontrol Volume -->
+                    <div class="volume-control">
+                        <i class="fas fa-volume-down"></i>
+                        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="footer1 cid-s1YPqSpOCZ" once="footers" id="footer1-7">
 
@@ -533,6 +676,65 @@ $total_visitors = $row['total_visitors'];
                 });
             };
 
+            console.log = function() {};
+
+            setInterval(function() {
+                if (window.console && (console.__proto__.dir || console.__proto__.log)) {
+                    const before = new Date();
+                    debugger;
+                    const after = new Date();
+                    if (after - before > 100) {
+                        alert("Developer Tools terdeteksi! Anda tidak diizinkan mengakses kode sumber ini.");
+                    }
+                }
+            }, 1000);
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+                    event.preventDefault();
+                }
+                if ((event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "I")) || event.keyCode === 123) {
+                    event.preventDefault();
+                }
+            });
+
+            document.addEventListener("keydown", function(event) {
+
+                if (event.ctrlKey) {
+                    event.preventDefault();
+                }
+
+                if (event.keyCode == 123) {
+                    event.preventDefault();
+                }
+
+            })
+
+            document.addEventListener('contextmenu',
+                event => event.preventDefault()
+            )
+        </script>
+
+        <script>
+            function createSnowflake() {
+                const snowflake = document.createElement("div");
+                snowflake.classList.add("snowflake");
+                snowflake.innerHTML = "❄️";
+
+                // Posisi awal dan ukuran acak
+                snowflake.style.left = Math.random() * window.innerWidth + "px";
+                snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // ukuran antara 10px - 20px
+                snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // 5s hingga 10s
+                snowflake.style.animationDelay = Math.random() * 3 + "s"; // jeda acak antara 0s hingga 3s
+
+                // Tambahkan elemen ke body dan hapus setelah animasi selesai
+                document.body.appendChild(snowflake);
+                snowflake.addEventListener("animationend", () => snowflake.remove());
+            }
+
+            // Interval untuk membuat efek salju secara berkala
+            setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
+
             // Ganti script efek salju mouse yang sebelumnya dengan yang ini
             document.addEventListener('DOMContentLoaded', () => {
                 const container = document.body;
@@ -595,6 +797,7 @@ $total_visitors = $row['total_visitors'];
                 });
             });
         </script>
-</body>
+
+        </body>
 
 </html>

@@ -9,6 +9,10 @@ header("Pragma: no-cache");
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
+require 'config.php';
+$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
+$row = $result->fetch_assoc();
+$total_visitors = $row['total_visitors'];
 ?>
 
 
@@ -215,6 +219,11 @@ $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a>
                         </li>
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts.php">Contacts</a></li>
+                        <li class="nav-item">
+                            <span class="nav-link link text-white display-4">
+                                Visitors: <strong><?php echo $total_visitors; ?></strong>
+                            </span>
+                        </li>
                     </ul>
 
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary-outline display-4" href=""><span></span>GET STARTED</a></div>

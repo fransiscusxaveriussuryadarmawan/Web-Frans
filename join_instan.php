@@ -3,7 +3,10 @@ $title = "FransXeagle YouTube";
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-
+require 'config.php';
+$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
+$row = $result->fetch_assoc();
+$total_visitors = $row['total_visitors'];
 ?>
 
 <!DOCTYPE html>
@@ -191,6 +194,9 @@ header("Pragma: no-cache");
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        <span class="nav-link link text-white display-4">
+                            Visitors: <strong><?php echo $total_visitors; ?></strong>
+                        </span>
                     </div>
                     <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Always Smile</a>
                 </div>
