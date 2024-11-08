@@ -4,9 +4,7 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 require 'config.php';
-$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
-$row = $result->fetch_assoc();
-$total_visitors = $row['total_visitors'];
+require 'visitors.php';
 ?>
 
 <!DOCTYPE html>

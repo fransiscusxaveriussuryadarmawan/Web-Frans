@@ -8,9 +8,7 @@ header("Pragma: no-cache");
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 require 'config.php';
-$result = $conn->query("SELECT COUNT(*) AS total_visitors FROM visitors");
-$row = $result->fetch_assoc();
-$total_visitors = $row['total_visitors'];
+require 'visitors.php';
 ?>
 
 <!DOCTYPE html>
