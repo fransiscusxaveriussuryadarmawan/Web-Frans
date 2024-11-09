@@ -219,7 +219,7 @@ require 'visitors.php';
                         <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">
-                                Version Canva Pro (30 Days) --- Expired 7 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                                Version Canva Pro (30 Days) --- Expired 9 December 2024 Premium<br> ⭐⭐⭐⭐⭐
                             </h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!
