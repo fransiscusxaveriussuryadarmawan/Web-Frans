@@ -439,7 +439,11 @@ require 'visitors.php';
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
+<<<<<<< HEAD
             window.location.href = 'https://www.canva.com/brand/join?token=fKpnSZjULFVY8YARlnllbg&referrer=team-invite';
+=======
+            window.location.href = 'https://www.canva.com/brand/join?token=MTrkhv1As6s4n7uGtJwYFQ&referrer=team-invite';
+>>>>>>> 302e70480e1f714b4805e25395cbbeaab09c4917
         }
 
         window.onload = function() {
