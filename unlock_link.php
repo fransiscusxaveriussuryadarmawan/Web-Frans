@@ -242,7 +242,7 @@ require 'visitors.php';
         </div>
 
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 62)</h1>
+            <h1>Unlock Exclusive Content (F48 TITIK 63)</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
@@ -439,7 +439,7 @@ require 'visitors.php';
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=Ke-wYvz_N3kXE7u1PuOR8g&referrer=team-invite';
+            window.location.href = 'https://www.canva.com/brand/join?token=W0YLvTjWOL99oJXR-GTWxQ&referrer=team-invite';
         }
 
         window.onload = function() {
