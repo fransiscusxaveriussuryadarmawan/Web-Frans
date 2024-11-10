@@ -32,6 +32,11 @@ if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_S
     $stmt->execute();
     $stmt->close();
 
+    // Hitung jumlah orang yang gagal akses
+    $result = $conn->query("SELECT COUNT(*) AS total FROM gagal_effort");
+    $row = $result->fetch_assoc();
+    $total_failed_attempts = $row['total'];
+
     // Ambil lokasi berdasarkan IP (gunakan API ipinfo.io)
     $location_data = @file_get_contents("http://ipinfo.io/{$ip_address}/json");
     $location_info = json_decode($location_data, true);
@@ -168,6 +173,10 @@ if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_S
                 <i class='fas fa-map-marker-alt'></i>
                 <span><strong>Lokasi:</strong> $city, $region, $country</span>
             </div>
+            <div class='info-item'>
+                    <i class='fas fa-user-slash'></i>
+                    <span><strong>Jumlah Orang Gagal Akses:</strong> $total_failed_attempts</span>
+                </div>
         </div>
         <a href='https://www.youtube.com/@fransxeagle' target='_blank' class='effort-link'>
             Coba belajar dulu di sini
