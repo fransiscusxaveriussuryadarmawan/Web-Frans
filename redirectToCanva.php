@@ -1,9 +1,8 @@
-<link href="img/about.png" rel="icon">
-
 <?php
 session_start();
 
 require_once 'config.php';
+
 // Fungsi untuk mendapatkan informasi undangan (contoh sederhana)
 function getInvitationInfo()
 {
@@ -41,16 +40,15 @@ if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_S
     $region = $location_info['region'] ?? 'Unknown Region';
     $country = $location_info['country'] ?? 'Unknown Country';
 
-    // Tampilkan pesan kesalahan dengan UI yang mencolok
+    // Token tidak valid atau tindakan belum selesai, tampilkan pesan kesalahan
     echo "
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>FRANSXEAGLE YOUTUBE</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
-    <style>
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Kesalahan - Tidak Boleh Curang!</title>
+         <style>
         body {
             background-color: #ffcccc;
             background-image: linear-gradient(135deg, #ffcccc 0%, #ff9999 100%);
@@ -155,9 +153,9 @@ if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_S
             margin-left: 8px;
         }
     </style>
-</head>
-<body>
-    <div class='error-container'>
+    </head>
+    <body>
+        <div class='error-container'>
         <div class='laugh-emoji'>😂</div>
         <h1><i class='fas fa-exclamation-triangle'></i> HAYO, KETAHUAN!</h1>
         <p>Ngapain coba curang-curang gini? WKWKWK.<br>Usaha dong, minimal effort lah dek!</p>
@@ -176,10 +174,8 @@ if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_S
             <i class='fas fa-external-link-alt'></i>
         </a>
     </div>
-</body>
-</html>";
+    </body>
+    </html>";
 }
 
-
-$conn->close();
 session_destroy();
