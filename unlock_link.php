@@ -237,6 +237,27 @@ $_SESSION['token'] = $token;
         .note-designer a:hover {
             text-decoration: underline;
         }
+
+        .blink {
+            color: #ff0000;
+            /* Warna merah mencolok */
+            text-decoration: underline;
+            font-size: 1.1rem;
+            animation: blinkAnimation 1s infinite;
+            /* Animasi berkedip */
+        }
+
+        @keyframes blinkAnimation {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -245,8 +266,10 @@ $_SESSION['token'] = $token;
 
         <!-- Notifikasi Tim Penuh -->
         <div class="note">
-            <strong>JIKA</strong>Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
+            <strong class="blink">JIKA</strong>
+            Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
         </div>
+
 
         <div class="card">
             <h1>Unlock Exclusive Content (F48 TITIK 64)</h1>
