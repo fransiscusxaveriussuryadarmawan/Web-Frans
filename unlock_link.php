@@ -4,6 +4,13 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 require 'config.php';
 require 'visitors.php';
+
+session_destroy();
+session_start(); // Memulai sesi baru
+
+// Buat token aman
+$token = bin2hex(random_bytes(16));
+$_SESSION['token'] = $token;
 ?>
 
 <!DOCTYPE html>
@@ -439,7 +446,8 @@ require 'visitors.php';
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            window.location.href = 'https://www.canva.com/brand/join?token=W0YLvTjWOL99oJXR-GTWxQ&referrer=team-invite';
+            const token = "<?php echo $token; ?>";
+            window.location.href = `redirectToCanva.php?token=${token}`;
         }
 
         window.onload = function() {
