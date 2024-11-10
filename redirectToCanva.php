@@ -1,32 +1,25 @@
 <?php
 session_start();
 
-// Periksa apakah token ada di sesi dan cocok dengan token dari URL
+// Fungsi untuk mendapatkan informasi undangan (contoh sederhana)
+function getInvitationInfo()
+{
+    // Simulasikan mendapatkan informasi token dari server
+    return [
+        'token' => 'Snm3y-sT0IwIM9Z7U8mUKQ'
+    ];
+}
+
+// Periksa apakah pengguna telah menyelesaikan tindakan yang diperlukan
 if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_SESSION['token']) {
-    // Jika token valid, tampilkan halaman dengan JavaScript untuk membuka link Canva
-    echo "
-    <!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Redirect to Canva</title>
-    </head>
-    <body>
-        <p>Harap tunggu, Anda akan segera diarahkan ke Canva...</p>
-        <script>
-            window.onload = function() {
-                // Buka link Canva dalam pop-up kecil
-                window.open('https://www.canva.com/brand/join?token=W0YLvTjWOL99oJXR-GTWxQ&referrer=team-invite', '_blank', 'width=800,height=600');
-                // Opsional: Redirect pengguna ke halaman lain atau beri tahu pengguna bahwa link telah dibuka
-                window.location.href = 'https://www.canva.com/brand/join?token=W0YLvTjWOL99oJXR-GTWxQ&referrer=team-invite'; // Ganti dengan URL tujuan Anda
-            };
-        </script>
-    </body>
-    </html>";
+    // Dapatkan informasi undangan dari server
+    $invitationInfo = getInvitationInfo();
+
+    // Redirect ke link Canva tanpa parameter referrer
+    header("Location: https://www.canva.com/brand/join?token=" . $invitationInfo['token']);
     exit();
 } else {
-    // Token tidak valid, tampilkan pesan kesalahan
+    // Token tidak valid atau tindakan belum selesai, tampilkan pesan kesalahan
     echo "
     <!DOCTYPE html>
     <html lang='en'>

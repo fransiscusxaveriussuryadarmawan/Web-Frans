@@ -446,9 +446,8 @@ $_SESSION['token'] = $token;
 
         function unlockLink() {
             sessionStorage.setItem('actionsCompleted', 'true');
-            // window.location.href = 'https://fransxeagle.com/teams/team68';
             const token = "<?php echo $token; ?>";
-            window.location.href = `redirectToCanva.php?token=${token}`;
+            window.location.href = `nyobaredirectToCanva.php?token=${token}`;
         }
 
         window.onload = function() {
