@@ -272,7 +272,7 @@ $_SESSION['token'] = $token;
 
 
         <div class="card">
-            <h1>Unlock Exclusive Content (F48 TITIK 64)</h1>
+            <h1>Unlock Exclusive Content Team FransXeagle</h1>
             <p>Complete all steps below to access the exclusive content!</p>
 
             <div id="actions">
