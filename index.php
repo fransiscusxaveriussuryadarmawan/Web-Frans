@@ -664,7 +664,11 @@ require 'pages_utama/visitors_index.php';
         </script>
 
         <script>
+            let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
+            const maxSnowflakes = 20; // Batas maksimal kepingan salju
             function createSnowflake() {
+                if (snowflakeCount >= maxSnowflakes) return; // Cek batas maksimal
+
                 const snowflake = document.createElement("div");
                 snowflake.classList.add("snowflake");
                 snowflake.innerHTML = "❄️";
@@ -677,11 +681,17 @@ require 'pages_utama/visitors_index.php';
 
                 // Tambahkan elemen ke body dan hapus setelah animasi selesai
                 document.body.appendChild(snowflake);
-                snowflake.addEventListener("animationend", () => snowflake.remove());
+                snowflakeCount++; // Tambah hitungan kepingan salju
+
+                snowflake.addEventListener("animationend", () => {
+                    snowflake.remove();
+                    snowflakeCount--; // Kurangi hitungan saat salju dihapus
+                });
             }
 
-            // Interval untuk membuat efek salju secara berkala
-            setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
+
+
+            setInterval(createSnowflake, 1000);
 
             // Ganti script efek salju mouse yang sebelumnya dengan yang ini
             document.addEventListener('DOMContentLoaded', () => {

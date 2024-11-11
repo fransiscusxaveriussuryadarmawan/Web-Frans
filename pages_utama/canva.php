@@ -42,15 +42,15 @@ require 'visitors.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* Tambahkan di dalam tag <style> yang sudah ada */
@@ -219,7 +219,7 @@ require 'visitors.php';
                         <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">
-                                Version Canva Pro (30 Days) --- Expired 10 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                                Version Canva Pro (30 Days) --- Expired 9 December 2024 Premium<br> ⭐⭐⭐⭐⭐
                             </h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!
@@ -779,7 +779,7 @@ require 'visitors.php';
                             &copy; <a class="border-bottom" href="https://fransxeagle.com/">https://fransxeagle.com/</a>, All Right Reserved.
 
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">My GF (Gabriella)</a>
+                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">Jessica Gabrielle</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -821,16 +821,16 @@ require 'visitors.php';
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/wow/wow.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/counterup/counterup.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 
     <script>
         console.log = function() {};
@@ -957,7 +957,11 @@ require 'visitors.php';
     </script>
 
     <script>
+        let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
+        const maxSnowflakes = 20; // Batas maksimal kepingan salju
         function createSnowflake() {
+            if (snowflakeCount >= maxSnowflakes) return; // Cek batas maksimal
+
             const snowflake = document.createElement("div");
             snowflake.classList.add("snowflake");
             snowflake.innerHTML = "❄️";
@@ -970,11 +974,16 @@ require 'visitors.php';
 
             // Tambahkan elemen ke body dan hapus setelah animasi selesai
             document.body.appendChild(snowflake);
-            snowflake.addEventListener("animationend", () => snowflake.remove());
+            snowflakeCount++; // Tambah hitungan kepingan salju
+
+            snowflake.addEventListener("animationend", () => {
+                snowflake.remove();
+                snowflakeCount--; // Kurangi hitungan saat salju dihapus
+            });
         }
 
         // Interval untuk membuat efek salju secara berkala
-        setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
+        setInterval(createSnowflake, 1000); // 700ms untuk efek salju yang lembut
 
         // Ganti script efek salju mouse yang sebelumnya dengan yang ini
         document.addEventListener('DOMContentLoaded', () => {

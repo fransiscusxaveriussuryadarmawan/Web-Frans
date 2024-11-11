@@ -71,6 +71,28 @@ require 'visitors.php';
             }
         }
 
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            color: white;
+            font-size: 1.2em;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
         /* Music Control Container Styling */
         .music-control,
         .volume-control,
@@ -389,6 +411,34 @@ require 'visitors.php';
         <script src="assets/formoid/formoid.min.js"></script>
 
         <script>
+            let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
+            const maxSnowflakes = 20; // Batas maksimal kepingan salju
+            function createSnowflake() {
+                if (snowflakeCount >= maxSnowflakes) return; // Cek batas maksimal
+
+                const snowflake = document.createElement("div");
+                snowflake.classList.add("snowflake");
+                snowflake.innerHTML = "❄️";
+
+                // Posisi awal dan ukuran acak
+                snowflake.style.left = Math.random() * window.innerWidth + "px";
+                snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // ukuran antara 10px - 20px
+                snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // 5s hingga 10s
+                snowflake.style.animationDelay = Math.random() * 3 + "s"; // jeda acak antara 0s hingga 3s
+
+                // Tambahkan elemen ke body dan hapus setelah animasi selesai
+                document.body.appendChild(snowflake);
+                snowflakeCount++; // Tambah hitungan kepingan salju
+
+                snowflake.addEventListener("animationend", () => {
+                    snowflake.remove();
+                    snowflakeCount--; // Kurangi hitungan saat salju dihapus
+                });
+            }
+
+
+
+            setInterval(createSnowflake, 1000);
             console.log = function() {};
 
             setInterval(function() {
