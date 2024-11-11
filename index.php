@@ -249,7 +249,7 @@ require 'pages_utama/visitors_index.php';
         <div class="container mbr-white">
             <div class="row justify-content-center">
                 <div class="card first col-12 col-md-6 col-lg-4">
-                    <a href="canva.php" class="full-card-link">
+                    <a href="pages_utama/canva.php" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
                                 <img src="assets/img/canva.jpeg" alt="TOD">
@@ -365,14 +365,15 @@ require 'pages_utama/visitors_index.php';
                 </div>
                 <div class="row justify-content-center">
                     <div class="card col-12 col-md-6 col-lg-4">
-                        <div class="card-wrapper align-center">
-                            <div class="card-box ">
-                                <h3 class="mbr-subtitle mbr-semibold mbr-fonts-style display-5">Click This Picture</h3>
+                        <a href="https://drive.google.com/drive/folders/1j1fqOTIg6M_o88ZiAeLZjByJ19EyJ04I?usp=sharing">
+                            <div class="card-wrapper align-center">
+                                <div class="card-box ">
+                                    <h3 class="mbr-subtitle mbr-semibold mbr-fonts-style display-5">Click This Picture</h3>
+                                </div>
+                                <img src="assets/img/check.jpeg" alt="TOD">
                             </div>
-                            <a href="https://drive.google.com/drive/folders/1j1fqOTIg6M_o88ZiAeLZjByJ19EyJ04I?usp=sharing"><img src="assets/img/check.jpeg" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-                        </div>
                     </div>
+                    </a>
                 </div>
             </div>
             </div>
