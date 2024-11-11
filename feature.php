@@ -35,7 +35,7 @@ require 'visitors.php';
     <meta name="description" content="New SolutionM4 Theme HTML Template - Download Now!">
 
     <!-- Favicon -->
-    <link href="img/about.png" rel="icon">
+    <link href="assets/img/about.png" rel="icon">
 
     <title>FransXeagle YouTube</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
@@ -173,7 +173,7 @@ require 'visitors.php';
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-
+                    <img src="assets/img/about.png" alt="Logo" style="width: 50px; height: 50px; margin-right: 30px;">
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -238,120 +238,100 @@ require 'visitors.php';
         <div class="container mbr-white">
             <div class="row justify-content-center">
                 <div class="card first col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper" href="canva.php">
-
-                            <a href="canva.php"><img src="img/canva.jpeg" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">CANVA TEAM PREMIUM</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                FREE CANVA TEAM FULL FEATURE</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper">
-
-                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20Akun%20*Github%20Student%20.*%0A%0AHarga%20Satuan%20:%20Rp%2015.000%20"><img src="img/github.jpeg" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">GITHUB STUDENT PACK</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Full Benefit Github Student (Azure, Domain, DO, etc)</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper">
-
-                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Virtual%20Number%20Negara%20Luar%20Negeri%20.*"><img src="img/virtual.jpg" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL NUMBER</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Get Virtual Number WhatsApp, Telegram, All APK</p>
-
-                            <div class="link-wrapper">
-
+                    <a href="canva.php" class="full-card-link">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <img src="assets/img/canva.jpeg" alt="TOD">
+                            </div>
+                            <div class="card-box align-center" style="margin-top: 15px;">
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">CANVA TEAM PREMIUM</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    FREE CANVA TEAM FULL FEATURE
+                                </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
+
                 <div class="card col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper">
-
-                            <a href=""><img src="img/credit.jpeg" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL CREDIT CARD</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Get Virtual Credit Card 2023</p>
-
-                            <div class="link-wrapper">
-
+                    <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20Akun%20*Github%20Student%20.*%0A%0AHarga%20Satuan%20:%20Rp%20100.000%20" class="full-card-link">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <img src="assets/img/github.jpeg" alt="Github Student Pack">
+                            </div>
+                            <div class="card-box align-center" style="margin-top: 15px;">
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">GITHUB STUDENT PACK</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Full Benefit Github Student (Azure, Domain, DO, etc) @Rp 100.000
+                                </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
+
                 <div class="card col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper">
-
-                            <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Owner%20Canva%20Education%20.*%0A%0AHarga%20Satuan%20:%20Rp%2050.000%20"><img src="img/com.png" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">OWNER CANVA EDU</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Owner Canva Education Lifetime</p>
-
-                            <div class="link-wrapper">
-
+                    <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Virtual%20Number%20Negara%20Luar%20Negeri%20.*" class="full-card-link">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <img src="assets/img/virtual.jpg" alt="Virtual Number">
+                            </div>
+                            <div class="card-box align-center" style="margin-top: 15px;">
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL NUMBER</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Get Virtual Number WhatsApp, Telegram, All APK @Rp 10.000 - @Rp 25.000
+                                </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="card last col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper align-center">
-                        <div class="img-wrapper">
 
-                            <a href="https://www.youtube.com/@fransxeagle"><img src="img/about.png" alt="TOD"> </a>
-                            <a class="nav-item nav-link"></a>
-
-                        </div>
-                        <div class="card-box align-center">
-
-                            <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">TUTORIAL YOUTUBE</h4>
-                            <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                                Tips & Trick</p>
-
-                            <div class="link-wrapper">
-
+                <div class="card col-12 col-md-6 col-lg-4">
+                    <a href="#" class="full-card-link">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <img src="assets/img/credit.jpeg" alt="Virtual Credit Card">
+                            </div>
+                            <div class="card-box align-center" style="margin-top: 15px;">
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL CREDIT CARD</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Get Virtual Credit Card 2024 @Rp 15.000
+                                </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
+                <div class="card col-12 col-md-6 col-lg-4">
+                    <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Email%20Yang%20Education%20.*%0A%0AEmail%20Domain%20EDU%20:%20Rp%2015.000%20%0AEmail%20Domain%20AC.ID%20:%20Rp%2025.000" class="full-card-link">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <img src="assets/img/edu.png" alt="Email EDU">
+                            </div>
+                            <div class="card-box align-center" style="margin-top: 15px;">
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">EMAIL EDU</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    domain.edu = Rp 15.000<br>domain.ac.id (indonesia) = Rp 25.000
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card col-12 col-md-6 col-lg-4">
+                    <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Owner%20Canva%20Education%20.*%0A%0AHarga%20Satuan%20:%20Rp%20100.000%20" class="full-card-link">
+                        <div class="card-wrapper align-center">
+                            <div class="img-wrapper">
+                                <img src="assets/img/com.png" alt="Owner Canva EDU">
+                            </div>
+                            <div class="card-box align-center" style="margin-top: 15px;">
+                                <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">OWNER CANVA EDU</h4>
+                                <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
+                                    Owner Canva Education Lifetime @Rp 100.000
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 <!-- Kontrol musik -->
                 <div class="music-control text-center" onclick="toggleMusic()">
                     <i id="music-icon" class="fas fa-play-circle"></i> Music
@@ -371,6 +351,7 @@ require 'visitors.php';
                 </div>
             </div>
         </div>
+
     </section>
 
     <section class="content2 cid-s1YQ6E1SFC" id="content2-e">
@@ -450,12 +431,12 @@ require 'visitors.php';
 
         <script>
             const playlist = [
-                "music/1.mp3",
-                "music/2.mp3",
-                "music/3.mp3",
-                "music/4.mp3",
-                "music/5.mp3",
-                "music/6.mp3"
+                "assets/music/1.mp3",
+                "assets/music/2.mp3",
+                "assets/music/3.mp3",
+                "assets/music/4.mp3",
+                "assets/music/5.mp3",
+                "assets/music/6.mp3"
             ];
 
             const backgroundMusic = document.getElementById("background-music");

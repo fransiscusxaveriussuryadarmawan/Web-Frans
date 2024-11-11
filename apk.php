@@ -36,7 +36,7 @@ require 'visitors.php';
     <meta name="description" content="New SolutionM4 Theme HTML Template - Download Now!">
 
     <!-- Favicon -->
-    <link href="img/about.png" rel="icon">
+    <link href="assets/img/about.png" rel="icon">
 
     <title>FransXeagle YouTube</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
@@ -234,7 +234,7 @@ require 'visitors.php';
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-
+                    <img src="assets/img/about.png" alt="Logo" style="width: 50px; height: 50px; margin-right: 30px;">
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -298,7 +298,7 @@ require 'visitors.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="img/apk_1.png" alt="Mobirise">
+                    <img src="assets/img/apk_1.png" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -315,7 +315,7 @@ require 'visitors.php';
 
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="img/coming.jpeg" alt="Mobirise">
+                    <img src="assets/img/coming.jpeg" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -332,7 +332,7 @@ require 'visitors.php';
 
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="img/coming.jpeg" alt="Mobirise">
+                    <img src="assets/img/coming.jpeg" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -349,7 +349,7 @@ require 'visitors.php';
 
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="img/coming.jpeg" alt="Mobirise">
+                    <img src="assets/img/coming.jpeg" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -419,12 +419,12 @@ require 'visitors.php';
 
     <script>
         const playlist = [
-            "music/1.mp3",
-            "music/2.mp3",
-            "music/3.mp3",
-            "music/4.mp3",
-            "music/5.mp3",
-            "music/6.mp3"
+            "assets/music/1.mp3",
+            "assets/music/2.mp3",
+            "assets/music/3.mp3",
+            "assets/music/4.mp3",
+            "assets/music/5.mp3",
+            "assets/music/6.mp3"
         ];
 
         const backgroundMusic = document.getElementById("background-music");
