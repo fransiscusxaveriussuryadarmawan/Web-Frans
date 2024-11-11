@@ -195,7 +195,7 @@ require 'visitors.php';
                             <div class="dropdown-menu m-0">
                                 <a href="contact.php" class="dropdown-item">Group WhatsApp</a>
                                 <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0" class="dropdown-item">PC WhatsApp</a>
-                                <a href="index.php" class="dropdown-item">Happy Page</a>
+                                <a href="../index.php" class="dropdown-item">Happy Page</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
@@ -219,7 +219,7 @@ require 'visitors.php';
                         <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">
-                                Version Canva Pro (30 Days) --- Expired 9 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                                Version Canva Pro (30 Days) --- Expired 10 December 2024 Premium<br> ⭐⭐⭐⭐⭐
                             </h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!
@@ -674,7 +674,7 @@ require 'visitors.php';
                             <div class="d-flex justify-content-center p-4">
                                 <a class="btn btn-square mx-1" href=https://www.facebook.com/fxsurya27><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square mx-1" href=https://twitter.com/fransxeagle><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=https://www.instagram.com/suryasidarmawan /><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=https://www.instagram.com/fransxdarmawan /><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square mx-1" href=https://www.linkedin.com/in/fransiscus-xaverius-surya-darmawan-a34325280 /><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
@@ -689,7 +689,7 @@ require 'visitors.php';
                             <div class="d-flex justify-content-center p-4">
                                 <a class="btn btn-square mx-1" href=https://www.facebook.com/fxsurya27><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square mx-1" href=https://twitter.com/fransxeagle><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=https://www.instagram.com/suryasidarmawan /><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=https://www.instagram.com/fransxdarmawan /><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square mx-1" href=https://www.linkedin.com/in/fransiscus-xaverius-surya-darmawan-a34325280 /><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
@@ -704,7 +704,7 @@ require 'visitors.php';
                             <div class="d-flex justify-content-center p-4">
                                 <a class="btn btn-square mx-1" href=https://www.facebook.com/fxsurya27><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square mx-1" href=https://twitter.com/fransxeagle><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=https://www.instagram.com/suryasidarmawan /><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=https://www.instagram.com/fransxdarmawan /><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square mx-1" href=https://www.linkedin.com/in/fransiscus-xaverius-surya-darmawan-a34325280 /><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
@@ -779,7 +779,7 @@ require 'visitors.php';
                             &copy; <a class="border-bottom" href="https://fransxeagle.com/">https://fransxeagle.com/</a>, All Right Reserved.
 
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">Jessica Gabrielle</a>
+                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">My GF (Gabriela)</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -874,12 +874,12 @@ require 'visitors.php';
 
     <script>
         const playlist = [
-            "music/1.mp3",
-            "music/2.mp3",
-            "music/3.mp3",
-            "music/4.mp3",
-            "music/5.mp3",
-            "music/6.mp3"
+            "../assets/music/1.mp3",
+            "../assets/music/2.mp3",
+            "../assets/music/3.mp3",
+            "../assets/music/4.mp3",
+            "../assets/music/5.mp3",
+            "../assets/music/6.mp3"
         ];
 
         const backgroundMusic = document.getElementById("background-music");

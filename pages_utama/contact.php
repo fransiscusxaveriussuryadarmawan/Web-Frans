@@ -9,7 +9,7 @@ header("Pragma: no-cache");
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
-require 'config.php';
+require '../services/config.php';
 require 'visitors.php';
 ?>
 
@@ -33,7 +33,7 @@ require 'visitors.php';
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/about.png" rel="icon">
+    <link href="../assets/img/about.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,7 +196,7 @@ require 'visitors.php';
                             <div class="dropdown-menu m-0">
                                 <a href="contact.php" class="dropdown-item">Group WhatsApp</a>
                                 <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0" class="dropdown-item">PC WhatsApp</a>
-                                <a href="index.php" class="dropdown-item">Happy Page</a>
+                                <a href="../index.php" class="dropdown-item">Happy Page</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -241,6 +241,7 @@ require 'visitors.php';
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
+                            <p class="text-center mb-4">Join Channel WhatsApp untuk update terbaru dan terpenting.<a href="https://whatsapp.com/channel/0029VavvvTUEgGfFtC21R51v">Channel WhatsApp</a>.</p>
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/FKL5cUbfjlr1McmU6C4Ngq">Group WhatsApp 1.0</a>.</p>
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/GPI64rZUCEiKETE5ax6yWL">Group WhatsApp 2.0 (Jika Full)</a>.</p>
                             <p class="text-center mb-4">Join Group WhatsApp untuk update terbaru dan terpenting. Serta saling berdiskusi dan berlajar ilmu desain bersama-sama. <a href="https://chat.whatsapp.com/LGeUIZpLfWR1ZDd1MkIfm4">Group WhatsApp 3.0 (Jika Full)</a>.</p>
@@ -282,22 +283,22 @@ require 'visitors.php';
                         <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
                         <div class="row g-2">
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-1.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-2.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-3.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-4.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-5.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-6.jpg" alt="Image">
                             </div>
                         </div>
                     </div>
@@ -318,7 +319,7 @@ require 'visitors.php';
                             &copy; <a class="border-bottom" href="https://fransxeagle.com/">https://fransxeagle.com/</a>, All Right Reserved.
 
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">Jessica Gabrielle</a>
+                            Designed By <a class="border-bottom" href="https://fransxeagle.com/">My GF (Gabriela)</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -413,12 +414,12 @@ require 'visitors.php';
 
     <script>
         const playlist = [
-            "music/1.mp3",
-            "music/2.mp3",
-            "music/3.mp3",
-            "music/4.mp3",
-            "music/5.mp3",
-            "music/6.mp3"
+            "../assets/music/1.mp3",
+            "../assets/music/2.mp3",
+            "../assets/music/3.mp3",
+            "../assets/music/4.mp3",
+            "../assets/music/5.mp3",
+            "../assets/music/6.mp3"
         ];
 
         const backgroundMusic = document.getElementById("background-music");
@@ -496,7 +497,11 @@ require 'visitors.php';
     </script>
 
     <script>
+        let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
+        const maxSnowflakes = 20; // Batas maksimal kepingan salju
         function createSnowflake() {
+            if (snowflakeCount >= maxSnowflakes) return; // Cek batas maksimal
+
             const snowflake = document.createElement("div");
             snowflake.classList.add("snowflake");
             snowflake.innerHTML = "❄️";
@@ -509,11 +514,15 @@ require 'visitors.php';
 
             // Tambahkan elemen ke body dan hapus setelah animasi selesai
             document.body.appendChild(snowflake);
-            snowflake.addEventListener("animationend", () => snowflake.remove());
+            snowflakeCount++; // Tambah hitungan kepingan salju
+
+            snowflake.addEventListener("animationend", () => {
+                snowflake.remove();
+                snowflakeCount--; // Kurangi hitungan saat salju dihapus
+            });
         }
 
-        // Interval untuk membuat efek salju secara berkala
-        setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
+        setInterval(createSnowflake, 1000);
 
         // Ganti script efek salju mouse yang sebelumnya dengan yang ini
         document.addEventListener('DOMContentLoaded', () => {

@@ -2,11 +2,11 @@
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-require 'config.php';
+require '../services/config.php';
 require 'visitors.php';
 
-session_destroy();
 session_start(); // Memulai sesi baru
+session_destroy();
 
 // Buat token aman
 $token = bin2hex(random_bytes(16));
@@ -30,7 +30,7 @@ $_SESSION['token'] = $token;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <!-- Favicon -->
-    <link href="img/about.png" rel="icon">
+    <link href="../assets/img/about.png" rel="icon">
 
     <!-- Custom CSS -->
     <style>
@@ -496,12 +496,12 @@ $_SESSION['token'] = $token;
 
 
         const playlist = [
-            "music/1.mp3",
-            "music/2.mp3",
-            "music/3.mp3",
-            "music/4.mp3",
-            "music/5.mp3",
-            "music/6.mp3"
+            "../assets/music/1.mp3",
+            "../assets/music/2.mp3",
+            "../assets/music/3.mp3",
+            "../assets/music/4.mp3",
+            "../assets/music/5.mp3",
+            "../assets/music/6.mp3"
         ];
 
         const backgroundMusic = document.getElementById("background-music");
@@ -578,24 +578,32 @@ $_SESSION['token'] = $token;
         };
     </script>
     <script>
+        let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
+        const maxSnowflakes = 20; // Batas maksimal kepingan salju
         function createSnowflake() {
+            if (snowflakeCount >= maxSnowflakes) return; // Cek batas maksimal
+
             const snowflake = document.createElement("div");
             snowflake.classList.add("snowflake");
             snowflake.innerHTML = "❄️";
 
-            // Position and size for each snowflake
+            // Posisi awal dan ukuran acak
             snowflake.style.left = Math.random() * window.innerWidth + "px";
-            snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // 10px to 20px
-            snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // 5s to 10s fall
-            snowflake.style.animationDelay = Math.random() * 3 + "s"; // Staggered start times
+            snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // ukuran antara 10px - 20px
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // 5s hingga 10s
+            snowflake.style.animationDelay = Math.random() * 3 + "s"; // jeda acak antara 0s hingga 3s
 
-            // Add to body and remove on animation end
+            // Tambahkan elemen ke body dan hapus setelah animasi selesai
             document.body.appendChild(snowflake);
-            snowflake.addEventListener("animationend", () => snowflake.remove());
+            snowflakeCount++; // Tambah hitungan kepingan salju
+
+            snowflake.addEventListener("animationend", () => {
+                snowflake.remove();
+                snowflakeCount--; // Kurangi hitungan saat salju dihapus
+            });
         }
 
-        // Generate snowflakes at intervals
-        setInterval(createSnowflake, 700); // 700ms for gentle snowfall
+        setInterval(createSnowflake, 1000);
 
         // Ganti script efek salju mouse yang sebelumnya dengan yang ini
         document.addEventListener('DOMContentLoaded', () => {

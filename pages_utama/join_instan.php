@@ -3,7 +3,7 @@ $title = "FransXeagle YouTube";
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-require 'config.php';
+require '../services/config.php';
 require 'visitors.php';
 ?>
 
@@ -26,7 +26,7 @@ require 'visitors.php';
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/about.png" rel="icon">
+    <link href="../assets/img/about.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -188,7 +188,7 @@ require 'visitors.php';
                             <div class="dropdown-menu m-0">
                                 <a href="contact.php" class="dropdown-item">Group WhatsApp</a>
                                 <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0" class="dropdown-item">PC WhatsApp</a>
-                                <a href="index.php" class="dropdown-item">Happy Page</a>
+                                <a href="../index.php" class="dropdown-item">Happy Page</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
@@ -225,8 +225,8 @@ require 'visitors.php';
                             </ol>
 
                             <div class="text-center my-4">
-                                <a href="img/qris.jpg" data-lightbox="qris">
-                                    <img src="img/qris.jpg" alt="QRIS Payment" class="img-fluid rounded img-hover-zoom" style="width: 400px; height: auto; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); cursor: pointer;">
+                                <a href="../assets/img/qris.jpg" data-lightbox="qris">
+                                    <img src="../assets/img/qris.jpg" alt="QRIS Payment" class="img-fluid rounded img-hover-zoom" style="width: 400px; height: auto; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); cursor: pointer;">
                                 </a>
                                 <p class="mt-2 text-muted">*Pastikan nominal pembayaran sesuai.</p>
                             </div>
@@ -281,22 +281,22 @@ require 'visitors.php';
                         <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
                         <div class="row g-2">
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-1.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-2.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-3.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-4.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-5.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                                <img class="img-fluid" src="../assets/img/portfolio-6.jpg" alt="Image">
                             </div>
                         </div>
                     </div>
@@ -411,12 +411,12 @@ require 'visitors.php';
 
     <script>
         const playlist = [
-            "music/1.mp3",
-            "music/2.mp3",
-            "music/3.mp3",
-            "music/4.mp3",
-            "music/5.mp3",
-            "music/6.mp3"
+            "../assets/music/1.mp3",
+            "../assets/music/2.mp3",
+            "../assets/music/3.mp3",
+            "../assets/music/4.mp3",
+            "../assets/music/5.mp3",
+            "../assets/music/6.mp3"
         ];
 
         const backgroundMusic = document.getElementById("background-music");
