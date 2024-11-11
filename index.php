@@ -10,8 +10,8 @@ header("Pragma: no-cache");
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 session_start();
-require 'config.php'; // Mengimpor file koneksi database
-require 'visitors_index.php';
+require 'services/config.php'; // Mengimpor file koneksi database
+require 'pages_utama/visitors_index.php';
 ?>
 
 
@@ -203,11 +203,11 @@ require 'visitors_index.php';
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="about.php">About</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="apk.php">Link Apk</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="feature.php">Features</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts.php">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/about.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/apk.php">Link Apk</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/feature.php">Features</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/6282110005254">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/contacts.php">Contacts</a></li>
                         <!-- Tambahkan elemen Total Visitors di sini -->
                         <li class="nav-item">
                             <span class="nav-link link text-white display-4">

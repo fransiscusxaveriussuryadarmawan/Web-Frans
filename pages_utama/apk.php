@@ -10,7 +10,7 @@ header("Pragma: no-cache");
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 
-require 'config.php';
+require '../services/config.php';
 require 'visitors.php';
 ?>
 
@@ -26,34 +26,33 @@ require 'visitors.php';
 
     <!-- CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
     <!-- Site made with Mobirise Website Builder v5.0.2, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v5.0.2, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
     <meta name="description" content="New SolutionM4 Theme HTML Template - Download Now!">
 
     <!-- Favicon -->
-    <link href="assets/img/about.png" rel="icon">
+    <link href="../assets/img/about.png" rel="icon">
 
     <title>FransXeagle YouTube</title>
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-    <link rel="stylesheet" href="assets/tether/tether.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="assets/dropdown/css/style.css">
-    <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.css">
-    <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.theme.css">
-    <link rel="stylesheet" href="assets/datepicker/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="assets/socicon/css/styles.css">
-    <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <link rel="stylesheet" href="mobirise/style.css">
+    <link rel="stylesheet" href="../assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="../assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="../assets/tether/tether.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="../assets/formstyler/jquery.formstyler.css">
+    <link rel="stylesheet" href="../assets/formstyler/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="../assets/datepicker/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="../assets/theme/css/style.css">
+    <link rel="preload" as="style" href="../assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="../mobirise/style.css">
 
     <style>
         /* Tambahkan di dalam tag <style> yang sudah ada */
@@ -234,7 +233,7 @@ require 'visitors.php';
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-                    <img src="assets/img/about.png" alt="Logo" style="width: 50px; height: 50px; margin-right: 30px;">
+                    <img src="../assets/img/about.png" alt="Logo" style="width: 50px; height: 50px; margin-right: 30px;">
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -247,7 +246,7 @@ require 'visitors.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="../index.php">Home</a></li>
 
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="about.php">About</a></li>
 
@@ -298,7 +297,7 @@ require 'visitors.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="assets/img/apk_1.png" alt="Mobirise">
+                    <img src="../assets/img/apk_1.png" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -315,7 +314,7 @@ require 'visitors.php';
 
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="assets/img/coming.jpeg" alt="Mobirise">
+                    <img src="../assets/img/coming.jpeg" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -332,7 +331,7 @@ require 'visitors.php';
 
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="assets/img/coming.jpeg" alt="Mobirise">
+                    <img src="../assets/img/coming.jpeg" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -349,7 +348,7 @@ require 'visitors.php';
 
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 md-pb">
-                    <img src="assets/img/coming.jpeg" alt="Mobirise">
+                    <img src="../assets/img/coming.jpeg" alt="Mobirise">
                 </div>
 
                 <div class="col-lg-6 col-md-12 md-pb">
@@ -419,12 +418,12 @@ require 'visitors.php';
 
     <script>
         const playlist = [
-            "assets/music/1.mp3",
-            "assets/music/2.mp3",
-            "assets/music/3.mp3",
-            "assets/music/4.mp3",
-            "assets/music/5.mp3",
-            "assets/music/6.mp3"
+            "../assets/music/1.mp3",
+            "../assets/music/2.mp3",
+            "../assets/music/3.mp3",
+            "../assets/music/4.mp3",
+            "../assets/music/5.mp3",
+            "../assets/music/6.mp3"
         ];
 
         const backgroundMusic = document.getElementById("background-music");

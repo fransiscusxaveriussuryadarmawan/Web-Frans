@@ -9,7 +9,7 @@ header("Pragma: no-cache");
 // Set variabel yang digunakan dalam halaman
 $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
-require 'config.php';
+require '../services/config.php';
 require 'visitors.php';
 ?>
 
@@ -25,34 +25,33 @@ require 'visitors.php';
 
     <!-- CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
     <!-- Site made with Mobirise Website Builder v5.0.2, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v5.0.2, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
     <meta name="description" content="New SolutionM4 Theme HTML Template - Download Now!">
 
     <!-- Favicon -->
-    <link href="assets/img/about.png" rel="icon">
+    <link href="../assets/img/about.png" rel="icon">
 
     <title>FransXeagle YouTube</title>
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-    <link rel="stylesheet" href="assets/tether/tether.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="assets/dropdown/css/style.css">
-    <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.css">
-    <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.theme.css">
-    <link rel="stylesheet" href="assets/datepicker/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="assets/socicon/css/styles.css">
-    <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <link rel="stylesheet" href="mobirise/style.css">
+    <link rel="stylesheet" href="../assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="../assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="../assets/tether/tether.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="../assets/formstyler/jquery.formstyler.css">
+    <link rel="stylesheet" href="../assets/formstyler/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="../assets/datepicker/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="../assets/theme/css/style.css">
+    <link rel="preload" as="style" href="../assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="../mobirise/style.css">
 
     <style>
         /* Tambahkan di dalam tag <style> yang sudah ada */
@@ -173,7 +172,7 @@ require 'visitors.php';
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
-                    <img src="assets/img/about.png" alt="Logo" style="width: 50px; height: 50px; margin-right: 30px;">
+                    <img src="../assets/img/about.png" alt="Logo" style="width: 50px; height: 50px; margin-right: 30px;">
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="https://www.youtube.com/@fransxeagle">FransXeagle</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,7 +185,7 @@ require 'visitors.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="../index.php">Home</a></li>
 
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="about.php">About</a></li>
 
@@ -241,7 +240,7 @@ require 'visitors.php';
                     <a href="canva.php" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
-                                <img src="assets/img/canva.jpeg" alt="TOD">
+                                <img src="../assets/img/canva.jpeg" alt="TOD">
                             </div>
                             <div class="card-box align-center" style="margin-top: 15px;">
                                 <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">CANVA TEAM PREMIUM</h4>
@@ -257,7 +256,7 @@ require 'visitors.php';
                     <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20Akun%20*Github%20Student%20.*%0A%0AHarga%20Satuan%20:%20Rp%20100.000%20" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
-                                <img src="assets/img/github.jpeg" alt="Github Student Pack">
+                                <img src="../assets/img/github.jpeg" alt="Github Student Pack">
                             </div>
                             <div class="card-box align-center" style="margin-top: 15px;">
                                 <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">GITHUB STUDENT PACK</h4>
@@ -273,7 +272,7 @@ require 'visitors.php';
                     <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Virtual%20Number%20Negara%20Luar%20Negeri%20.*" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
-                                <img src="assets/img/virtual.jpg" alt="Virtual Number">
+                                <img src="../assets/img/virtual.jpg" alt="Virtual Number">
                             </div>
                             <div class="card-box align-center" style="margin-top: 15px;">
                                 <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL NUMBER</h4>
@@ -289,7 +288,7 @@ require 'visitors.php';
                     <a href="#" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
-                                <img src="assets/img/credit.jpeg" alt="Virtual Credit Card">
+                                <img src="../assets/img/credit.jpeg" alt="Virtual Credit Card">
                             </div>
                             <div class="card-box align-center" style="margin-top: 15px;">
                                 <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">VIRTUAL CREDIT CARD</h4>
@@ -305,7 +304,7 @@ require 'visitors.php';
                     <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Email%20Yang%20Education%20.*%0A%0AEmail%20Domain%20EDU%20:%20Rp%2015.000%20%0AEmail%20Domain%20AC.ID%20:%20Rp%2025.000" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
-                                <img src="assets/img/edu.png" alt="Email EDU">
+                                <img src="../assets/img/edu.png" alt="Email EDU">
                             </div>
                             <div class="card-box align-center" style="margin-top: 15px;">
                                 <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">EMAIL EDU</h4>
@@ -321,7 +320,7 @@ require 'visitors.php';
                     <a href="https://api.whatsapp.com/send?phone=620821-1000-5254&text=Halo%20Admin%20:)%20Saya%20Ingin%20Membeli%20*Owner%20Canva%20Education%20.*%0A%0AHarga%20Satuan%20:%20Rp%20100.000%20" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
-                                <img src="assets/img/com.png" alt="Owner Canva EDU">
+                                <img src="../assets/img/com.png" alt="Owner Canva EDU">
                             </div>
                             <div class="card-box align-center" style="margin-top: 15px;">
                                 <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">OWNER CANVA EDU</h4>
@@ -431,12 +430,12 @@ require 'visitors.php';
 
         <script>
             const playlist = [
-                "assets/music/1.mp3",
-                "assets/music/2.mp3",
-                "assets/music/3.mp3",
-                "assets/music/4.mp3",
-                "assets/music/5.mp3",
-                "assets/music/6.mp3"
+                "../assets/music/1.mp3",
+                "../assets/music/2.mp3",
+                "../assets/music/3.mp3",
+                "../assets/music/4.mp3",
+                "../assets/music/5.mp3",
+                "../assets/music/6.mp3"
             ];
 
             const backgroundMusic = document.getElementById("background-music");
