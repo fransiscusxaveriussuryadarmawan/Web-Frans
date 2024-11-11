@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-require_once 'config.php';
+require_once '../services/config.php';
 
 // Fungsi untuk mendapatkan informasi undangan (contoh sederhana)
 function getInvitationInfo()
 {
     // Simulasikan mendapatkan informasi token dari server
     return [
-        'token' => 'g5WaAQMv00_8KelDH7Rb7Q'
+        'token' => '7gXQ_1m4z-zKa_hUrIpH-g'
     ];
 }
 
