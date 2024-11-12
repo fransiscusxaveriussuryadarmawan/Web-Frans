@@ -556,9 +556,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             document.addEventListener('contextmenu',
                 event => event.preventDefault()
             )
-        </script>
 
-        <script>
             const playlist = [
                 "assets/music/1.mp3",
                 "assets/music/2.mp3",
@@ -678,9 +676,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             document.addEventListener('contextmenu',
                 event => event.preventDefault()
             )
-        </script>
 
-        <script>
             let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
             const maxSnowflakes = 20; // Batas maksimal kepingan salju
             function createSnowflake() {
