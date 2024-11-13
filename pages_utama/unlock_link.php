@@ -5,12 +5,29 @@ header("Pragma: no-cache");
 require '../services/config.php';
 require 'visitors.php';
 
-session_start(); // Memulai sesi baru
 session_destroy();
+session_start(); // Memulai sesi baru
 
 // Buat token aman
 $token = bin2hex(random_bytes(16));
 $_SESSION['token'] = $token;
+
+// Daftar domain yang diizinkan untuk mengakses halaman ini
+$allowed_domains = ['https://fransxeagle.com', 'http://localhost'];
+
+// Periksa HTTP_ORIGIN atau HOST
+$origin = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_HOST'] ?? '';
+
+if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagle.com' || $_SERVER['HTTP_HOST'] === 'localhost') {
+    // Jika domain diizinkan, kirim header Access-Control-Allow-Origin
+    header("Access-Control-Allow-Origin: " . $origin);
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+} else {
+    // Jika domain tidak diizinkan, kirim respon 403 Forbidden
+    header("HTTP/1.1 403 Forbidden");
+    exit("HAHAHA Bro.");
+}
 ?>
 
 <!DOCTYPE html>

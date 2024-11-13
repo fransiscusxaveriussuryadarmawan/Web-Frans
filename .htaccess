@@ -1,0 +1,38 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<FilesMatch "\.(html|htm|php|css|js)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+</FilesMatch>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
+  ExpiresByType text/css "access plus 0 seconds"
+  ExpiresByType image/png "access plus 0 seconds"
+  ExpiresByType image/jpeg "access plus 0 seconds"
+  ExpiresByType image/gif "access plus 0 seconds"
+</IfModule>
+
+# Abaikan file yang ada secara fisik (CSS, JS, gambar, dll.)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite rule untuk halaman 'canva.php'
+RewriteRule ^canva$ /pages_utama/canva.php [L]
+RewriteRule ^about /pages_utama/about.php [L]
+RewriteRule ^apk /pages_utama/apk.php [L]
+RewriteRule ^feature /pages_utama/feature.php [L]
+RewriteRule ^contacts /pages_utama/contacts.php [L]
+RewriteRule ^unlock_link /pages_utama/unlock_link.php [L]
+RewriteRule ^join_instan /pages_utama/join_instan.php [L]
+RewriteRule ^redirectToCanva /pages_utama/redirectToCanva.php [L]
+RewriteRule ^contact /pages_utama/contact.php [L]
+
+# Aturan untuk memastikan folder 'pages_utama' dapat mengakses CSS dan JS
+RewriteRule ^css/(.*)$ /pages_utama/css/$1 [L]
+RewriteRule ^js/(.*)$ /pages_utama/js/$1 [L]
+RewriteRule ^lib/(.*)$ /pages_utama/lib/$1 [L]

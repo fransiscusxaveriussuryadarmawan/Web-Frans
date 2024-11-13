@@ -14,12 +14,12 @@ require 'services/config.php'; // Mengimpor file koneksi database
 require 'pages_utama/visitors_index.php';
 
 // Daftar domain yang diizinkan untuk mengakses halaman ini
-$allowed_domains = ['https://fransxeagle.com'];
+$allowed_domains = ['https://fransxeagle.com', 'http://localhost'];
 
 // Periksa HTTP_ORIGIN atau HOST
 $origin = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_HOST'] ?? '';
 
-if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagle.com') {
+if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagle.com' || $_SERVER['HTTP_HOST'] === 'localhost') {
     // Jika domain diizinkan, kirim header Access-Control-Allow-Origin
     header("Access-Control-Allow-Origin: " . $origin);
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
@@ -27,7 +27,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
 } else {
     // Jika domain tidak diizinkan, kirim respon 403 Forbidden
     header("HTTP/1.1 403 Forbidden");
-    exit("Access denied.");
+    exit("HAHAHA Bro.");
 }
 ?>
 
@@ -219,12 +219,12 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/about.php">About</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/apk.php">Link Apk</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/feature.php">Features</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="about">About</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="apk">Link Apk</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="feature">Features</a></li>
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/6282110005254">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="pages_utama/contacts.php">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts">Contacts</a></li>
                         <!-- Tambahkan elemen Total Visitors di sini -->
                         <li class="nav-item">
                             <span class="nav-link link text-white display-4">
@@ -266,7 +266,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         <div class="container mbr-white">
             <div class="row justify-content-center">
                 <div class="card first col-12 col-md-6 col-lg-4">
-                    <a href="pages_utama/canva.php" class="full-card-link">
+                    <a href="canva" class="full-card-link">
                         <div class="card-wrapper align-center">
                             <div class="img-wrapper">
                                 <img src="assets/img/canva.jpeg" alt="TOD">

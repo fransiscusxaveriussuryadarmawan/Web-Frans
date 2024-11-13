@@ -5,6 +5,23 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 require '../services/config.php';
 require 'visitors.php';
+
+// Daftar domain yang diizinkan untuk mengakses halaman ini
+$allowed_domains = ['https://fransxeagle.com', 'http://localhost'];
+
+// Periksa HTTP_ORIGIN atau HOST
+$origin = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_HOST'] ?? '';
+
+if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagle.com' || $_SERVER['HTTP_HOST'] === 'localhost') {
+    // Jika domain diizinkan, kirim header Access-Control-Allow-Origin
+    header("Access-Control-Allow-Origin: " . $origin);
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+} else {
+    // Jika domain tidak diizinkan, kirim respon 403 Forbidden
+    header("HTTP/1.1 403 Forbidden");
+    exit("HAHAHA Bro.");
+}
 ?>
 
 <!DOCTYPE html>
@@ -180,18 +197,18 @@ require 'visitors.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="canva.php" class="nav-item nav-link active">Home</a>
-                        <a href="about.php" class="nav-item nav-link">About</a>
+                        <a href="canva" class="nav-item nav-link active">Home</a>
+                        <a href="about" class="nav-item nav-link">About</a>
                         <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">👉Subscribe👈</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Link</a>
                             <div class="dropdown-menu m-0">
-                                <a href="contact.php" class="dropdown-item">Group WhatsApp</a>
+                                <a href="contact" class="dropdown-item">Group WhatsApp</a>
                                 <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0" class="dropdown-item">PC WhatsApp</a>
-                                <a href="../index.php" class="dropdown-item">Happy Page</a>
+                                <a href="https://fransxeagle.com/" class="dropdown-item">Happy Page</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        <a href="contact" class="nav-item nav-link">Contact</a>
                         <span class="nav-link link text-white display-4">
                             Visitors: <strong><?php echo $total_visitors; ?></strong>
                         </span>

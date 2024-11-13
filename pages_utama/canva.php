@@ -9,6 +9,23 @@ $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 require '../services/config.php';
 require 'visitors.php';
+
+// Daftar domain yang diizinkan untuk mengakses halaman ini
+$allowed_domains = ['https://fransxeagle.com', 'http://localhost'];
+
+// Periksa HTTP_ORIGIN atau HOST
+$origin = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_HOST'] ?? '';
+
+if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagle.com' || $_SERVER['HTTP_HOST'] === 'localhost') {
+    // Jika domain diizinkan, kirim header Access-Control-Allow-Origin
+    header("Access-Control-Allow-Origin: " . $origin);
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+} else {
+    // Jika domain tidak diizinkan, kirim respon 403 Forbidden
+    header("HTTP/1.1 403 Forbidden");
+    exit("HAHAHA Bro.");
+}
 ?>
 
 <!DOCTYPE html>
@@ -187,18 +204,18 @@ require 'visitors.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <a href="about.php" class="nav-item nav-link">About</a>
+                        <a href="https://fransxeagle.com/" class="nav-item nav-link active">Home</a>
+                        <a href="about" class="nav-item nav-link">About</a>
                         <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">👉Subscribe👈</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Link</a>
                             <div class="dropdown-menu m-0">
-                                <a href="contact.php" class="dropdown-item">Group WhatsApp</a>
+                                <a href="contact" class="dropdown-item">Group WhatsApp</a>
                                 <a href="https://api.whatsapp.com/send/?phone=%2B6282138616235&text&type=phone_number&app_absent=0" class="dropdown-item">PC WhatsApp</a>
-                                <a href="../index.php" class="dropdown-item">Happy Page</a>
+                                <a href="https://fransxeagle.com/" class="dropdown-item">Happy Page</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        <a href="contact" class="nav-item nav-link">Contact</a>
                         <span class="nav-link link text-white display-4">
                             Visitors: <strong><?php echo $total_visitors; ?></strong>
                         </span>
@@ -219,7 +236,7 @@ require 'visitors.php';
                         <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">
-                                Version Canva Pro (30 Days) --- Expired 10 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                                Version Canva Pro (30 Days) --- Expired 13 December 2024 Premium<br> ⭐⭐⭐⭐⭐
                             </h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!
@@ -241,7 +258,7 @@ require 'visitors.php';
                                 <h3 class="text-primary text-center mb-3">Opsi 1: Join via Link Subscribe</h3>
                                 <p class="text-center">(Cocok untuk orang yang sudah paham sesuai video di YouTube).</p>
                                 <div class="text-center mt-4">
-                                    <a href="unlock_link.php" class="btn btn-primary btn-lg">Click This For Join</a>
+                                    <a href="unlock_link" class="btn btn-primary btn-lg">Click This For Join</a>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +269,7 @@ require 'visitors.php';
                                 <h3 class="text-secondary text-center mb-3">Opsi 2: Join via QRIS WA</h3>
                                 <p class="text-center">(Cocok untuk orang yang ingin mode INSTANS 1 detik hanya <b>Rp 1.000</b>).</p>
                                 <div class="text-center mt-4">
-                                    <a href="join_instan.php" class="btn btn-secondary btn-lg">Join via QRIS</a>
+                                    <a href="join_instan" class="btn btn-secondary btn-lg">Join via QRIS</a>
                                 </div>
                             </div>
                         </div>

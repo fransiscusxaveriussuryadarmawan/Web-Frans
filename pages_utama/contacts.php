@@ -11,6 +11,23 @@ $title = "FransXeagle YouTube";
 $csrfToken = "YM2OIKfwWytVKoQ3tAuDuYLtjEfc6Oo3jotAwza1";
 require '../services/config.php';
 require 'visitors.php';
+
+// Daftar domain yang diizinkan untuk mengakses halaman ini
+$allowed_domains = ['https://fransxeagle.com', 'http://localhost'];
+
+// Periksa HTTP_ORIGIN atau HOST
+$origin = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_HOST'] ?? '';
+
+if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagle.com' || $_SERVER['HTTP_HOST'] === 'localhost') {
+    // Jika domain diizinkan, kirim header Access-Control-Allow-Origin
+    header("Access-Control-Allow-Origin: " . $origin);
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+} else {
+    // Jika domain tidak diizinkan, kirim respon 403 Forbidden
+    header("HTTP/1.1 403 Forbidden");
+    exit("HAHAHA Bro.");
+}
 ?>
 
 
@@ -207,16 +224,16 @@ require 'visitors.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="../index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="https://fransxeagle.com/">Home</a></li>
 
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="about.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="about">About</a></li>
 
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="apk.php">Link Apk</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="apk">Link Apk</a></li>
 
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="feature.php">Features</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="feature">Features</a></li>
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="https://wa.me/+6282110005254">Pricing</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts.php">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="contacts">Contacts</a></li>
                         <li class="nav-item">
                             <span class="nav-link link text-white display-4">
                                 Visitors: <strong><?php echo $total_visitors; ?></strong>
