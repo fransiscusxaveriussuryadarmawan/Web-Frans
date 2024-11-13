@@ -207,7 +207,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                     <div class="navbar-nav mx-auto py-0">
                         <a href="canva" class="nav-item nav-link active">Home</a>
                         <a href="about" class="nav-item nav-link">About</a>
-                        <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">👉Subscribe👈</a>
+                        <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">&#128073;Subscribe&#128072;</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Link</a>
                             <div class="dropdown-menu m-0">

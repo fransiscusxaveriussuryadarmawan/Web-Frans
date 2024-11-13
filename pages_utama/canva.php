@@ -206,7 +206,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                     <div class="navbar-nav mx-auto py-0">
                         <a href="https://fransxeagle.com/" class="nav-item nav-link active">Home</a>
                         <a href="about" class="nav-item nav-link">About</a>
-                        <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">👉Subscribe👈</a>
+                        <a href="https://www.youtube.com/@fransxeagle" class="nav-item nav-link">&#128073;Subscribe&#128072;</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Link</a>
                             <div class="dropdown-menu m-0">
@@ -230,13 +230,13 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
 
             <div class="container-xxl bg-primary hero-header">
                 <div class="container px-lg-5">
-                    <h2 class="text-white mb-4 animated slideInDown">😉</h2>
+                    <h2 class="text-white mb-4 animated slideInDown">&#128521;</h2>
                     <div class="row g-5 align-items-center">
 
                         <!-- Bagian Deskripsi -->
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">
-                                Version Canva Pro (30 Days) --- Expired 13 December 2024 Premium<br> ⭐⭐⭐⭐⭐
+                                Version Canva Pro (30 Days) --- Expired 13 December 2024 Premium<br> &#11088;&#11088;&#11088;&#11088;&#11088;
                             </h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 SPECIAL NOVEMBER 2024! Bergabung sekarang untuk akses instan ke semua fitur Canva Pro seperti unlock all templates, effects, dan banyak lagi. Terima kasih atas dukungan Anda!

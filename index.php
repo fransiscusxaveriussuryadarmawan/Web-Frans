@@ -249,7 +249,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
 
                     <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1"><strong>FRANSXEAGLE YOUTUBE</strong><strong><br></strong></h1>
                     <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5">Free Informative Tutorial Such As Canva Premium | Github Student | Canva Education
-                        | VCC | Virtual Number | Account Premium 💯<br>
+                        | VCC | Virtual Number | Account Premium &#128175;<br>
                     </p>
                     <div class="mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://www.youtube.com/@fransxeagle"> SUBSCRIBE </a></div>
                     <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5"><br>

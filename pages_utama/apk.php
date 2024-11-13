@@ -180,63 +180,6 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         }
     </style>
 
-    <!-- Google Tag Manager-->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PFK425');
-
-        console.log = function() {};
-
-        setInterval(function() {
-            if (window.console && (console.__proto__.dir || console.__proto__.log)) {
-                const before = new Date();
-                debugger;
-                const after = new Date();
-                if (after - before > 100) {
-                    alert("Developer Tools terdeteksi! Anda tidak diizinkan mengakses kode sumber ini.");
-                }
-            }
-        }, 1000);
-
-        document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-                event.preventDefault();
-            }
-            if ((event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "I")) || event.keyCode === 123) {
-                event.preventDefault();
-            }
-        });
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.ctrlKey) {
-                event.preventDefault();
-            }
-
-            if (event.keyCode == 123) {
-                event.preventDefault();
-            }
-
-        })
-
-        document.addEventListener('contextmenu',
-            event => event.preventDefault()
-        )
-    </script>
-    <!-- End Google Tag Manager -->
-
 </head>
 
 <body>
@@ -296,7 +239,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
 
                     <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1"><strong>FRANSXEAGLE YOUTUBE</strong><strong><br></strong></h1>
                     <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5">Free Informative Tutorial Such As Canva Premium | Github Student | Canva Education
-                        | VCC | Virtual Number | Account Premium 💯<br>
+                        | VCC | Virtual Number | Account Premium &#128175;<br>
                     </p>
                     <div class="mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://www.youtube.com/@fransxeagle"> SUBSCRIBE </a></div>
                     <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5"><br>
@@ -515,9 +458,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                 console.log("Auto-play diblokir oleh browser. User perlu mengaktifkannya secara manual.");
             });
         };
-    </script>
 
-    <script>
         let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
         const maxSnowflakes = 20; // Batas maksimal kepingan salju
         function createSnowflake() {
@@ -606,6 +547,59 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                 }, 50); // 50ms delay
             });
         });
+
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PFK425');
+
+        console.log = function() {};
+
+        setInterval(function() {
+            if (window.console && (console.__proto__.dir || console.__proto__.log)) {
+                const before = new Date();
+                debugger;
+                const after = new Date();
+                if (after - before > 100) {
+                    alert("Developer Tools terdeteksi! Anda tidak diizinkan mengakses kode sumber ini.");
+                }
+            }
+        }, 1000);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+                event.preventDefault();
+            }
+            if ((event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "I")) || event.keyCode === 123) {
+                event.preventDefault();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+
+        })
+
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        )
     </script>
 </body>
 
