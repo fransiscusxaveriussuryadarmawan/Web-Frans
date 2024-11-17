@@ -284,7 +284,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         <!-- Notifikasi Tim Penuh -->
         <div class="note">
             <strong class="blink">JIKA</strong>
-            Tim Canva penuh, silakan <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bergabung%20di%20tim%20Canva">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
+            Tim Canva penuh, silakan <a href="https://wa.me/6282138616235?text=Min%20timnya%20sudah%20Full%0A%0Aini%20saya%20kirimkan%20bukti%20foto%20atau%20SS%20sekarang%0A%0A*Mengirimkan%20bukti%20supaya%20anda%20tidak%20berbohong%20alias%20ngaku2%20full%20padahal%20masih%20ada%20slot*">chat admin (Klik Disini)</a> untuk bantuan lebih lanjut dan kirimkan buktinya.
         </div>
 
 
@@ -357,7 +357,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
 
         <!-- Notifikasi Brand Designer -->
         <div class="note-designer">
-            Jika ingin menjadi Brand Designer, <strong>kirim alamat email dan infokan tim Anda ke</strong> <a href="https://wa.me/6281234567890"><strong>chat admin (Klik Disini)</strong></a>. Kami akan tambahkan Anda ke dalam tim sebagai Brand Designer.
+            Jika ingin menjadi Brand Designer, <strong>kirim alamat email dan infokan tim Anda ke</strong> <a href="https://wa.me/6282138616235?text=Halo%20admin%20saya%20ingin%20jadi%20brand%20designer%0A%0AAlamat%20email%20:%20*%23email%20canva%20kamu*%0A%0ASaya%20berada%20di%20tim%20:%20*%23nama%20tim%20kamu%20sekarang*"><strong>chat admin (Klik Disini)</strong></a>. Kami akan tambahkan Anda ke dalam tim sebagai Brand Designer.
         </div>
     </div>
 
