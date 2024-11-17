@@ -2,7 +2,7 @@
 session_start();
 
 // Set the timeout duration (in seconds)
-$timeout_duration = 600; // 10 minutes
+$timeout_duration = 1000; // 10 minutes
 
 // Check if the user has been inactive for too long
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
@@ -16,7 +16,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) >
 $_SESSION['LAST_ACTIVITY'] = time();
 
 // Define the admin password (replace with a secure password)
-define('ADMIN_PASSWORD', 'Mesch454*');
+define('ADMIN_PASSWORD', 'Kikosurya27*');
 
 // Check if the password has already been verified
 if (!isset($_SESSION['authenticated'])) {
@@ -132,7 +132,7 @@ if (!isset($_SESSION['authenticated'])) {
 }
 
 // If authenticated, proceed with edit functionality
-require_once 'config.php';
+require_once '../services/config.php';
 
 function getPaste($id, $conn)
 {
@@ -203,6 +203,11 @@ if (isset($_GET['id'])) {
                         font-weight: bold;
                         transition: background-color 0.3s ease;
                     }
+                    
+                    textarea {
+    height: 300px; /* Atur tinggi sesuai kebutuhan, misalnya 300px */
+    resize: vertical; /* Izinkan pengguna mengubah ukuran vertikal */
+}
 
                     button:hover {
                         background-color: #0056b3;
@@ -227,7 +232,9 @@ if (isset($_GET['id'])) {
                         <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($paste['title']); ?>" required>
 
                         <label for="content">Konten:</label>
-                        <textarea id="content" name="content" rows="10" required><?php echo htmlspecialchars($paste['content']); ?></textarea>
+                        <textarea id="content" name="content" rows="10" required>
+    <?php echo htmlspecialchars_decode($paste['content'], ENT_QUOTES); ?>
+</textarea>
 
                         <button type="submit">Simpan Perubahan</button>
                     </form>

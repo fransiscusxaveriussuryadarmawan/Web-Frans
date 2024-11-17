@@ -29,30 +29,28 @@
             }
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Pastikan body dan html memiliki tinggi 100% */
+}
 
-        .container {
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-            text-align: left;
-            margin: 20px;
-            position: relative;
-            animation: fadeIn 1s ease-in-out;
-        }
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    text-align: left;
+    margin: 20px auto;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+    height: auto; /* Tambahkan ini untuk membuat konten otomatis menyesuaikan */
+}
+
 
         @keyframes fadeIn {
             from {
@@ -81,18 +79,18 @@
             font-weight: bold;
         }
 
-        .content {
-            font-size: 18px;
-            color: #555;
-            white-space: pre-wrap;
-            line-height: 1.6;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-            max-height: 400px;
-            overflow-y: auto;
-        }
+.content {
+    font-size: 18px;
+    color: #555;
+    white-space: pre-wrap;
+    line-height: 1.6; /* Sesuaikan jarak antar baris */
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-height: 600px; /* Atur tinggi maksimum untuk mengontrol ruang */
+    overflow-y: scroll; /* Pastikan scrollbar vertikal ditampilkan */
+}
 
         .footer {
             text-align: center;
@@ -133,16 +131,50 @@
             margin: 0 auto 20px auto;
             display: block;
         }
+        
+        .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff6f61; /* Warna saat hover */
+}
+
     </style>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.php" class="nav-link">Halaman Utama (KLIK INI)</a>
+        </div>
+    </nav>
+    
     <div class="container">
-        <img src="logo.png" alt="Logo" class="logo">
+        <img src="../assets/img/about.png" alt="Logo" class="logo">
         <h1>Konten FransXeagle</h1>
 
         <?php
-        require_once 'config.php';
+        require_once '../services/config.php';
         session_start();
 
         function getPaste($id, $conn)
@@ -166,14 +198,19 @@
             if (preg_match('/^[a-f0-9]{32}$/', $id)) {
                 $paste = getPaste($id, $conn);
 
-                if ($paste) {
+               if ($paste) {
                     updateLastIP($id, $conn);
                     echo '<div class="content-title">' . htmlspecialchars($paste['title']) . ' ✅</div>';
-                    echo '<div class="content">' . nl2br(htmlspecialchars($paste['content'])) . '</div>';
+                    
+                    // Menggunakan htmlspecialchars_decode untuk menampilkan tanda kutip ganda secara harfiah
+                    $decodedContent = htmlspecialchars_decode($paste['content'], ENT_QUOTES);
+                    echo '<div class="content">' . nl2br($decodedContent) . '</div>';
+                
                     echo '<div class="created-at">Dibuat pada: ' . htmlspecialchars($paste['created_at']) . '</div>';
                 } else {
                     echo '<div class="content">Paste tidak ditemukan.</div>';
                 }
+
             } else {
                 echo '<div class="content">ID tidak valid.</div>';
             }
@@ -191,7 +228,11 @@
     </div>
 
     <script>
+        let snowflakeCount = 0; // Variabel global untuk menghitung kepingan salju
+        const maxSnowflakes = 20; // Batas maksimal kepingan salju
         function createSnowflake() {
+            if (snowflakeCount >= maxSnowflakes) return; // Cek batas maksimal
+
             const snowflake = document.createElement("div");
             snowflake.classList.add("snowflake");
             snowflake.innerHTML = "❄️";
@@ -204,11 +245,75 @@
 
             // Tambahkan elemen ke body dan hapus setelah animasi selesai
             document.body.appendChild(snowflake);
-            snowflake.addEventListener("animationend", () => snowflake.remove());
+            snowflakeCount++; // Tambah hitungan kepingan salju
+
+            snowflake.addEventListener("animationend", () => {
+                snowflake.remove();
+                snowflakeCount--; // Kurangi hitungan saat salju dihapus
+            });
         }
 
         // Interval untuk membuat efek salju secara berkala
-        setInterval(createSnowflake, 700); // 700ms untuk efek salju yang lembut
+        setInterval(createSnowflake, 1000); // 700ms untuk efek salju yang lembut
+
+        // Ganti script efek salju mouse yang sebelumnya dengan yang ini
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.body;
+            let mouseX = 0;
+            let mouseY = 0;
+            let lastCreateTime = 0;
+
+            // Fungsi untuk membuat kepingan salju di sekitar mouse
+            function createMouseSnowflake(x, y) {
+                const currentTime = Date.now();
+                // Tambahkan delay minimal 100ms antara pembuatan salju
+                if (currentTime - lastCreateTime < 100) return;
+
+                lastCreateTime = currentTime;
+
+                const snowflake = document.createElement('div');
+                snowflake.className = 'mouse-snowflake';
+
+                // Ukuran lebih kecil
+                const size = Math.random() * 3 + 1; // Ukuran 1-4px
+                snowflake.style.width = size + 'px';
+                snowflake.style.height = size + 'px';
+
+                // Offset yang lebih besar agar lebih tersebar
+                const offsetX = (Math.random() - 0.5) * 30;
+                const offsetY = (Math.random() - 0.5) * 10;
+                snowflake.style.left = (x + offsetX) + 'px';
+                snowflake.style.top = (y + offsetY) + 'px';
+
+                // Durasi jatuh yang lebih cepat
+                const duration = Math.random() * 2 + 1; // 1-3 detik
+                snowflake.style.animation = `mouseFall ${duration}s linear forwards`;
+
+                container.appendChild(snowflake);
+
+                setTimeout(() => {
+                    snowflake.remove();
+                }, duration * 1000);
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                if (isThrottled) return;
+
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                // Kurangi probabilitas pembuatan salju
+                if (Math.random() < 0.15) { // Dikurangi dari 0.3 menjadi 0.15
+                    createMouseSnowflake(mouseX, mouseY);
+                }
+
+                // Throttle mouse movement
+                isThrottled = true;
+                setTimeout(() => {
+                    isThrottled = false;
+                }, 50); // 50ms delay
+            });
+        });
     </script>
 </body>
 
