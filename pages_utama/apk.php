@@ -27,7 +27,8 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
 } else {
     // Jika domain tidak diizinkan, kirim respon 403 Forbidden
     header("HTTP/1.1 403 Forbidden");
-    exit("HAHAHA Bro.");
+    header("Location: https://fransxeagle.com");
+    exit("Silakan Akses di https://fransxeagle.com");
 }
 ?>
 
