@@ -8,7 +8,7 @@ function getInvitationInfo()
 {
     // Simulasikan mendapatkan informasi token dari server
     return [
-        'token' => '5b_eROzHnk0r6viG5C4Pbg'
+        'token' => 'D6OndOAEtcXZnGLXgOkB-w'
     ];
 }
 
