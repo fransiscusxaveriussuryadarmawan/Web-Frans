@@ -408,7 +408,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         // URLs yang dienkripsi
         const socialUrls = {
             subscribe: encrypt('https://www.youtube.com/@fransxeagle'),
-            like: encrypt('https://youtu.be/Y25eThOLV1E'),
+            like: encrypt('https://youtu.be/Ou6r01rWWBA'),
             instagram: encrypt('https://www.instagram.com/fransxdarmawan/')
         };
 
