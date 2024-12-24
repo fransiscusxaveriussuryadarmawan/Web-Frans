@@ -23,7 +23,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite rule untuk halaman 'canva.php'
 RewriteRule ^canva$ /pages_utama/canva.php [L]
-RewriteRule ^about /pages_utama/about.php [L]
+RewriteRule ^canva.php$ /pages_utama/canva.php [L]
+RewriteRule ^about$ /pages_utama/about.php [L]
+RewriteRule ^about.php$ /pages_utama/about.php [L]
 RewriteRule ^apk /pages_utama/apk.php [L]
 RewriteRule ^feature /pages_utama/feature.php [L]
 RewriteRule ^contacts /pages_utama/contacts.php [L]
@@ -31,6 +33,11 @@ RewriteRule ^unlock_link /pages_utama/unlock_link.php [L]
 RewriteRule ^join_instan /pages_utama/join_instan.php [L]
 RewriteRule ^redirectToCanva /pages_utama/redirectToCanva.php [L]
 RewriteRule ^contact /pages_utama/contact.php [L]
+RewriteRule ^paste.php /pages_editor/paste.php [L]
+RewriteRule ^edit_paste.php /pages_editor/edit_paste.php [L]
+RewriteRule ^save_paste.php /pages_editor/save_paste.php [L]
+RewriteRule ^update_paste.php /pages_editor/update_paste.php [L]
+RewriteRule ^utama_paste.php /pages_editor/utama_paste.php [L]
 
 # Aturan untuk memastikan folder 'pages_utama' dapat mengakses CSS dan JS
 RewriteRule ^css/(.*)$ /pages_utama/css/$1 [L]

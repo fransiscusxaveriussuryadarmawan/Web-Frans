@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../services/config.php';
 session_start();
 
 function savePaste($title, $content, $conn)

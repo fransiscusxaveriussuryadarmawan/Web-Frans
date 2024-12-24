@@ -8,9 +8,32 @@ function getInvitationInfo()
 {
     // Simulasikan mendapatkan informasi token dari server
     return [
-        'token' => '62cnYre9Vx-WYArhjLj-tA'
+        'token' => 'XmEJucIIvs9AOUsbLdsoMg'
     ];
 }
+
+
+// QRIS 6 = mt6zy@vinakop.com / Miih97312j
+
+
+
+// XmEJucIIvs9AOUsbLdsoMg = FRANS49 TITIK 85 = zaile@taxibmt.net / H3nM4oP5qR6s
+// DObC9WxzuNxOk4aevnXntA = FRANS49 TITIK 86 = zaqv7wjx@datadudi.com / T7uV8wX9yZ0a 
+// bPNEK2LirRnr49kdwDfevg = FRANS49 TITIK 87 = czn4icz@libinit.com / B1cD2eF3gH4i
+// 2hwk9hm5RXegwKrtZJZKeA = FRANS49 TITIK 88 = tmrthirkw@vinakoop.com / P5qR6sT7uV8w
+// BLFKwbMCAwC5MR9lsNU0pw = FRANS49 TITIK 89 = mt974iq@vinakop.com / L9mN0oP1qR2s
+// Nat0Cyc53G0fag8bDuryAA = FRANS49 TITIK 90 = zae7kbma@datadudi.com / A3bC4dE5fG6h
+// bYdVOW2SvyYx6IHwjrUNIA = FRANS49 TITIK 91 = m99onzef@libinit.com / J7kL8mN9oP0q
+// nRQPhs7QYES1wqx8rGLVaw = FRANS49 TITIK 92 = azlkcm@vinakoop.com / X1yZ2aB3cD4e
+// _kVTVXq8pRuKPgl5DmXUFQ = FRANS49 TITIK 93 = azv1kyc@vinakop.com / Q5wEr6tY7uI8
+// ZBNk-DePQekrm0towviKgg = FRANS49 TITIK 94 = io9vctj@datadudi.com / H9nM0oP1qR2s
+// Xwv0r2eOATFOe9N7URl7lA = FRANS49 TITIK 95 = akx5rk@taxibmt.net / T3uV4wX5yZ6a
+// Mj4GHw6jN7Kwe0me1fK-8w = FRANS49 TITIK 96 = akw4pduf@libinit.com / B7cD8eF9gH0i
+// JrKOXKccNZjmiUBXXtfc0Q = FRANS49 TITIK 97 = m9ksvx@vinakop.com / P1qR2sT3uV4w
+// E6fzeacwn6Bf9ZmGyHuCTg = FRANS49 TITIK 98 = akuxga@vinakoop.com / L5mN6oP7qR8s
+// i9TgLKQn8rfP9dMD6hMgxw = FRANS49 TITIK 99 = m4vn4fiux@taxibmt.net / A9bC0dE1fG2h
+// y891xEQqWDlM2cMGSxU2Jg = FRANS49 TITIK 100 = az05celo@datadudi.com / J3kL4mN5oP6q
+
 
 // Periksa apakah pengguna telah menyelesaikan tindakan yang diperlukan
 if (isset($_SESSION['token']) && isset($_GET['token']) && $_GET['token'] === $_SESSION['token']) {
