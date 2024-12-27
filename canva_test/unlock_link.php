@@ -342,6 +342,51 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
     </div>
 
     <script>
+        let lanternCount = 0;
+        const maxLanterns = 20;
+
+        function createLantern() {
+            if (lanternCount >= maxLanterns) return;
+
+            const lantern = document.createElement("div");
+            lantern.classList.add("lantern");
+
+            // Posisi awal lentera
+            lantern.style.left = Math.random() * window.innerWidth + "px";
+
+            // Durasi animasi dan delay secara acak
+            const fallDuration = 5 * Math.random() + 5;
+            const swayDelay = Math.random() * 3;
+            lantern.style.animationDuration = `${fallDuration}s`;
+            lantern.style.animationDelay = `${swayDelay}s`;
+
+            document.body.appendChild(lantern);
+            lanternCount++;
+
+            // Hapus elemen setelah animasi selesai
+            lantern.addEventListener("animationend", () => {
+                lantern.remove();
+                lanternCount--;
+            });
+        }
+
+        // Interval untuk membuat lentera secara berkala
+        setInterval(createLantern, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         console.log = function() {}, setInterval((function() {
             if (window.console && (console.__proto__.dir || console.__proto__.log)) {
                 const e = new Date;
@@ -419,7 +464,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         }
 
         function openExampleImage() {
-            window.open('../assets/img/bukti_full.png', '_blank');
+            window.open('https://fransxeagle.com/bukti_full', '_blank');
         }
 
         window.onload = function() {
