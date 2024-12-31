@@ -212,6 +212,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                             <h3 class="text-center mb-3 text-primary">Opsi 1: Join via Link Subscribe</h3>
                             <p class=text-center>(Cocok untuk orang yang sudah paham sesuai video di YouTube).
                             <div class="text-center mt-4"><a href=unlock_link class="btn btn-lg btn-primary">Click This For Join</a></div>
+                            <div class="text-center mt-4"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-lg btn-primary">Watch Tutorial</a></div>
                         </div>
                     </div>
                     <!-- Opsi 2 -->
