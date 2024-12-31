@@ -330,7 +330,10 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             </div>
             <input type="text" id="password-input" class="form-control" placeholder="Enter Password" style="margin-top: 1rem; display: none;">
             <input type="checkbox" id="show-password" style="margin-top: 0.5rem; display: none;" onclick="togglePasswordVisibility()">
-            <div id="password-note" class="note" style="display: none;">Please enter the password: <strong>kiko</strong></div>
+            <div id="password-note" class="note" style="display: none;">
+                Silakan masukkan PASSWORD yang ada pada video ini di antara menit 4 - 7
+                <a href="https://www.youtube.com" target="_blank">FransXeagle YouTube (KLIK DISINI)</a>
+            </div>
             <div id="error-message" class="alert alert-danger" style="display: none; margin-top: 1rem;"></div>
             <button class="btn unlock-btn" id=unlock-btn onclick=unlockLink()>Access Exclusive Content</button>
             <div class="music-control text-center" onclick=toggleMusic()><i class="fas fa-play-circle" id=music-icon></i> Music</div><audio id=background-music type=audio/mpeg></audio><progress id=music-progress max=100 style=width:100% value=0></progress>
