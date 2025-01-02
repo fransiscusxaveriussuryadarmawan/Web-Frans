@@ -331,7 +331,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             <input type="text" id="password-input" class="form-control" placeholder="Enter Password" style="margin-top: 1rem; display: none;">
             <input type="checkbox" id="show-password" style="margin-top: 0.5rem; display: none;" onclick="togglePasswordVisibility()">
             <div id="password-note" class="note" style="display: none;">
-                Silakan masukkan PASSWORD yang ada pada video ini di antara menit 4 - 7
+                ⚠️ Silakan masukkan PASSWORD yang ada pada video ini di antara menit 4 - menit 7
                 <a href="https://www.youtube.com" target="_blank">FransXeagle YouTube (KLIK DISINI)</a>
             </div>
             <div id="error-message" class="alert alert-danger" style="display: none; margin-top: 1rem;"></div>
@@ -340,6 +340,9 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             <div class=music-time><span id=current-time>0:00</span> <span id=duration>0:00</span></div>
             <div class=volume-control><i class="fas fa-volume-down"></i> <input id=volume-control max=1 min=0 step=0.1 type=range value=0.5> <i class="fas fa-volume-up"></i></div>
             <div class=updated-at><span>Updated At: <span id=update-timestamp>2024-12-27 21:30:06 WIB</span></span></div><span class=updated-at>Visitors: <strong><?php echo $total_visitors; ?></strong></span>
+        </div>
+        <div class="note">
+            <strong>Note:</strong> Kami menambahkan password untuk memastikan hanya pengguna yang menonton video kami yang dapat mengakses konten eksklusif ini. Terima kasih atas pengertian dan dukungannya.
         </div>
         <div class=note-designer>Jika ingin menjadi Brand Designer, <strong>kirim alamat email dan infokan tim Anda ke</strong> <a href="https://wa.me/6282138616235?text=Halo%20admin%20saya%20ingin%20jadi%20brand%20designer%0A%0AAlamat%20email%20:%20*%23email%20canva%20kamu*%0A%0ASaya%20berada%20di%20tim%20:%20*%23nama%20tim%20kamu%20sekarang*"><strong>chat admin (Klik Disini)</strong></a>. Kami akan mengubah role Anda di tim tersebut sebagai Brand Designer.</div>
     </div>
