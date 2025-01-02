@@ -28,6 +28,24 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
     header("Location: https://fransxeagle.com");
     exit("Silakan Akses di https://fransxeagle.com");
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $valid_password = 'saatnya2025'; // Password yang valid
+    $password = $_POST['password'] ?? '';
+
+    if ($password === $valid_password) {
+        echo json_encode([
+            'status' => 'success',
+            'redirect' => 'redirectToCanva.php?token=' . $_SESSION['token']
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => '⚠️ Wrong password! Please read the instructions on this page carefully and try again.'
+        ]);
+    }
+    exit; // Pastikan tidak melanjutkan rendering HTML jika ini adalah request POST
+}
 ?>
 
 <!doctypehtml>
@@ -332,7 +350,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             <input type="checkbox" id="show-password" style="margin-top: 0.5rem; display: none;" onclick="togglePasswordVisibility()">
             <div id="password-note" class="note" style="display: none;">
                 ⚠️ Silakan masukkan PASSWORD yang ada pada video ini di antara menit 4 - menit 7
-                <a href="https://www.youtube.com" target="_blank">FransXeagle YouTube (KLIK DISINI)</a>
+                <a href="https://youtu.be/sKtCmRHwrPQ" target="_blank">FransXeagle YouTube (KLIK DISINI)</a>
             </div>
             <div id="error-message" class="alert alert-danger" style="display: none; margin-top: 1rem;"></div>
             <button class="btn unlock-btn" id=unlock-btn onclick=unlockLink()>Access Exclusive Content</button>
@@ -407,7 +425,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             decrypt = e => CryptoJS.AES.decrypt(e, "your-secret-key").toString(CryptoJS.enc.Utf8),
             socialUrls = {
                 subscribe: encrypt("https://www.youtube.com/@fransxeagle"),
-                like: encrypt("https://youtu.be/Ou6r01rWWBA"),
+                like: encrypt("https://youtu.be/sKtCmRHwrPQ"),
                 instagram: encrypt("https://www.instagram.com/fransxdarmawan/")
             },
             actionsStatus = {
@@ -458,15 +476,26 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         }
 
         function unlockLink() {
-            const password = document.getElementById("password-input").value;
-            const errorMessage = document.getElementById("error-message");
-            if (password === "kiko") { // Replace "kiko" with the actual password
-                sessionStorage.setItem("actionsCompleted", "true");
-                window.location.href = "redirectToCanva.php?token=<?php echo $token; ?>";
-            } else {
-                errorMessage.style.display = "block";
-                errorMessage.textContent = "⚠️ Wrong password! Please read the instructions on this page carefully and try again.";
-            }
+            const password = document.getElementById('password-input').value;
+            fetch('unlock_link.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        password
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        window.location.href = data.redirect;
+                    } else {
+                        const errorMessage = document.getElementById('error-message');
+                        errorMessage.style.display = 'block';
+                        errorMessage.textContent = data.message;
+                    }
+                });
         }
 
         function openExampleImage() {

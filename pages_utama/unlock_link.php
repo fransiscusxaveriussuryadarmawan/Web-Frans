@@ -28,6 +28,24 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
     header("Location: https://fransxeagle.com");
     exit("Silakan Akses di https://fransxeagle.com");
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $valid_password = 'saatnya2025'; // Password yang valid
+    $password = $_POST['password'] ?? '';
+
+    if ($password === $valid_password) {
+        echo json_encode([
+            'status' => 'success',
+            'redirect' => 'redirectToCanva.php?token=' . $_SESSION['token']
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => '⚠️ Wrong password! Please read the instructions on this page carefully and try again.'
+        ]);
+    }
+    exit; // Pastikan tidak melanjutkan rendering HTML jika ini adalah request POST
+}
 ?>
 
 <!doctypehtml>
@@ -328,9 +346,12 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
                     <div class=progress-bar id=progress-instagram></div>
                 </div>
             </div>
-            <input type="text" id="password-input" class="form-control" placeholder="Enter password (huruf kecil semua)" style="margin-top: 1rem; display: none;">
+            <input type="text" id="password-input" class="form-control" placeholder="Enter Password" style="margin-top: 1rem; display: none;">
             <input type="checkbox" id="show-password" style="margin-top: 0.5rem; display: none;" onclick="togglePasswordVisibility()">
-            <div id="password-note" class="note" style="display: none;">⚠️ Please enter the password in lowercase only: <strong>kiko</strong></div>
+            <div id="password-note" class="note" style="display: none;">
+                ⚠️ Silakan masukkan PASSWORD yang ada pada video ini di antara menit 4 - menit 7
+                <a href="https://youtu.be/sKtCmRHwrPQ" target="_blank">FransXeagle YouTube (KLIK DISINI)</a>
+            </div>
             <div id="error-message" class="alert alert-danger" style="display: none; margin-top: 1rem;"></div>
             <button class="btn unlock-btn" id=unlock-btn onclick=unlockLink()>Access Exclusive Content</button>
             <div class="music-control text-center" onclick=toggleMusic()><i class="fas fa-play-circle" id=music-icon></i> Music</div><audio id=background-music type=audio/mpeg></audio><progress id=music-progress max=100 style=width:100% value=0></progress>
@@ -338,10 +359,58 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             <div class=volume-control><i class="fas fa-volume-down"></i> <input id=volume-control max=1 min=0 step=0.1 type=range value=0.5> <i class="fas fa-volume-up"></i></div>
             <div class=updated-at><span>Updated At: <span id=update-timestamp>2024-12-27 21:30:06 WIB</span></span></div><span class=updated-at>Visitors: <strong><?php echo $total_visitors; ?></strong></span>
         </div>
+        <div class="note">
+            <strong>Note:</strong> Kami menambahkan password untuk memastikan hanya pengguna yang menonton video kami yang dapat mengakses konten eksklusif ini. Terima kasih atas pengertian dan dukungannya.
+        </div>
         <div class=note-designer>Jika ingin menjadi Brand Designer, <strong>kirim alamat email dan infokan tim Anda ke</strong> <a href="https://wa.me/6282138616235?text=Halo%20admin%20saya%20ingin%20jadi%20brand%20designer%0A%0AAlamat%20email%20:%20*%23email%20canva%20kamu*%0A%0ASaya%20berada%20di%20tim%20:%20*%23nama%20tim%20kamu%20sekarang*"><strong>chat admin (Klik Disini)</strong></a>. Kami akan mengubah role Anda di tim tersebut sebagai Brand Designer.</div>
     </div>
 
     <script>
+        let lanternCount = 0;
+        const maxLanterns = 20;
+
+        function createLantern() {
+            if (lanternCount >= maxLanterns) return;
+
+            const lantern = document.createElement("div");
+            lantern.classList.add("lantern");
+
+            // Posisi awal lentera
+            lantern.style.left = Math.random() * window.innerWidth + "px";
+
+            // Durasi animasi dan delay secara acak
+            const fallDuration = 5 * Math.random() + 5;
+            const swayDelay = Math.random() * 3;
+            lantern.style.animationDuration = `${fallDuration}s`;
+            lantern.style.animationDelay = `${swayDelay}s`;
+
+            document.body.appendChild(lantern);
+            lanternCount++;
+
+            // Hapus elemen setelah animasi selesai
+            lantern.addEventListener("animationend", () => {
+                lantern.remove();
+                lanternCount--;
+            });
+        }
+
+        // Interval untuk membuat lentera secara berkala
+        setInterval(createLantern, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         console.log = function() {}, setInterval((function() {
             if (window.console && (console.__proto__.dir || console.__proto__.log)) {
                 const e = new Date;
@@ -356,7 +425,7 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
             decrypt = e => CryptoJS.AES.decrypt(e, "your-secret-key").toString(CryptoJS.enc.Utf8),
             socialUrls = {
                 subscribe: encrypt("https://www.youtube.com/@fransxeagle"),
-                like: encrypt("https://youtu.be/Ou6r01rWWBA"),
+                like: encrypt("https://youtu.be/sKtCmRHwrPQ"),
                 instagram: encrypt("https://www.instagram.com/fransxdarmawan/")
             },
             actionsStatus = {
@@ -407,16 +476,26 @@ if (in_array($origin, $allowed_domains) || $_SERVER['HTTP_HOST'] === 'fransxeagl
         }
 
         function unlockLink() {
-            const password = document.getElementById("password-input").value;
-            const errorMessage = document.getElementById("error-message");
-            if (password === "kiko") { // Replace "kiko" with the actual password
-                sessionStorage.setItem("actionsCompleted", "true");
-                window.location.href = "redirectToCanva.php?token=<?php echo $token; ?>";
-            } 
-            else {
-                errorMessage.style.display = "block";
-                errorMessage.textContent = "⚠️ Wrong password! Please read the instructions on this page carefully and try again.";
-            }
+            const password = document.getElementById('password-input').value;
+            fetch('unlock_link.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        password
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        window.location.href = data.redirect;
+                    } else {
+                        const errorMessage = document.getElementById('error-message');
+                        errorMessage.style.display = 'block';
+                        errorMessage.textContent = data.message;
+                    }
+                });
         }
 
         function openExampleImage() {
