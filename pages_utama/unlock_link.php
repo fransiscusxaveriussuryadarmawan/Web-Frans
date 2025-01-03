@@ -354,6 +354,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div id="error-message" class="alert alert-danger" style="display: none; margin-top: 1rem;"></div>
             <button class="btn unlock-btn" id=unlock-btn onclick=unlockLink()>Access Exclusive Content</button>
+            <div class="note" style="margin-top: 1rem;">
+                <strong>Kalian ingin tanpa password?</strong> Ingin instan? <a href="https://fransxeagle.com/join_instan" target="_blank">Silakan klik disini untuk pergi ke halaman instan</a>.
+            </div>
             <div class="music-control text-center" onclick=toggleMusic()><i class="fas fa-play-circle" id=music-icon></i> Music</div><audio id=background-music type=audio/mpeg></audio><progress id=music-progress max=100 style=width:100% value=0></progress>
             <div class=music-time><span id=current-time>0:00</span> <span id=duration>0:00</span></div>
             <div class=volume-control><i class="fas fa-volume-down"></i> <input id=volume-control max=1 min=0 step=0.1 type=range value=0.5> <i class="fas fa-volume-up"></i></div>
